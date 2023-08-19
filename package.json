@@ -2,7 +2,7 @@
   "name": "invoice-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mikolajgraczyk.github.io/invoice-app",
+  "homepage": "https://mikolajgraczyk.github.io/invoice-app/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
