@@ -19,5 +19,6 @@ export const { toggleTheme } = invoicesSlice.actions;
 export const selectInvoicesState = (state) => state.invoices;
 export const selectInvoices = (state) => selectInvoicesState(state).invoices;
 export const selectIsLightTheme = (state) => selectInvoicesState(state).isLightTheme;
+export const selectInvoicesTotalNumber = (state) => selectInvoices(state).length;
 
 export default invoicesSlice.reducer;

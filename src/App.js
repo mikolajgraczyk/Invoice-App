@@ -5,6 +5,7 @@ import { lightTheme, darkTheme } from "./theme";
 import { useSelector } from "react-redux";
 import { selectIsLightTheme } from "./features/invoices/invoicesSlice";
 import { GlobalStyle } from "./GlobalStyle";
+import HomePage from "./features/HomePage";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
@@ -14,6 +15,7 @@ function App() {
       <GlobalStyle />
       <Wrapper>
         <SideBar />
+        <HomePage />
       </Wrapper>
     </ThemeProvider>
   );

@@ -9,22 +9,24 @@ export const StyledSideBar = styled.aside`
   width: 103px;
   height: 100%;
   display: flex;
+  position: fixed;
   flex-direction: column;
   justify-content: space-between;
   transition: 0.4s;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 100%;
     height: 80px;
     border-radius: 0px;
     flex-direction: row;
+    position: static;
   }
 `;
 
 export const StyledRectangle = styled(SideBarRectangle)`
   position: absolute;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 80px;
     height: 80px;
   }
@@ -35,7 +37,7 @@ export const StyledShape = styled(CombinedShape)`
   left: 32px;
   top: 33.29px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 31px;
     height: 29px;
     left: 25px;
@@ -49,7 +51,7 @@ export const BottomBarSection = styled.div`
   gap: 27px;
   align-items: center;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     flex-direction: row;
     gap: 32px;
   }
@@ -73,7 +75,7 @@ export const UserIconSection = styled.div`
   border-top: 1px ${({ theme }) => theme.bar.line} solid;
   padding: 24px 0 24px 0;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     border-top: none;
     border-left: 1px ${({ theme }) => theme.bar.line} solid;
     height: 100%;
@@ -85,7 +87,7 @@ export const StyledUserDefaultIcon = styled(UserDefaultIcon)`
   display: block;
   margin: 0 auto;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 32px;
     height: 32px;
   }

@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     height: 100vh;
     display: flex;
 
-    @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+    @media(max-width: ${({theme}) => theme.breakpoint.tabletMax}px){
         flex-direction: column;
     };
 `;
