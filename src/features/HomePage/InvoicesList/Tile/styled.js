@@ -9,6 +9,7 @@ export const StyledTile = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 16px 24px;
@@ -46,6 +47,7 @@ export const Hash = styled.span`
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  transition: 0.4s;
 `;
 
 export const InvoiceId = styled.span`
@@ -54,6 +56,7 @@ export const InvoiceId = styled.span`
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.25px;
+  transition: 0.4s;
 `;
 
 export const PaymentTerm = styled.span`
@@ -64,10 +67,12 @@ export const PaymentTerm = styled.span`
 
 export const Due = styled.span`
   color: ${({ theme }) => theme.tile.text1};
+  transition: 0.4s;
 `;
 
 export const PaymentDate = styled.span`
   color: ${({ theme }) => theme.tile.text2};
+  transition: 0.4s;
 `;
 
 export const ClientName = styled.span`
@@ -75,6 +80,7 @@ export const ClientName = styled.span`
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.1px;
+  transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     position: absolute;
@@ -94,6 +100,7 @@ export const TotalPrice = styled.span`
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.25px;
+  transition: 0.4s;
 `;
 
 export const Status = styled.div`
@@ -109,6 +116,7 @@ export const Status = styled.div`
   align-items: center;
   border-radius: 6px;
   margin-left: 20px;
+  transition: 0.4s;
 
   ${({ status }) =>
     status === "paid" &&
