@@ -7,10 +7,17 @@ const invoicesSlice = createSlice({
     invoices: defaultInvoices,
     isLightTheme: true,
   },
-  reducers: {},
+  reducers: {
+    toggleTheme: (state) => {
+      state.isLightTheme = !state.isLightTheme;
+    },
+  },
 });
 
-export const selectInvoicesState = state => state.invoices;
-export const selectInvoices = state => selectInvoicesState(state).invoices;
+export const { toggleTheme } = invoicesSlice.actions;
+
+export const selectInvoicesState = (state) => state.invoices;
+export const selectInvoices = (state) => selectInvoicesState(state).invoices;
+export const selectIsLightTheme = (state) => selectInvoicesState(state).isLightTheme;
 
 export default invoicesSlice.reducer;

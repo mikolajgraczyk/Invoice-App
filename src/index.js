@@ -1,6 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
 import { Provider } from "react-redux";
 import store from "./store";
 import ReactDOM from "react-dom/client";
@@ -11,10 +9,8 @@ import { GlobalStyle } from "./GlobalStyle";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <ThemeProvider theme={lightTheme}>
       <App />
       <GlobalStyle />
-    </ThemeProvider>
   </Provider>
 );
 
