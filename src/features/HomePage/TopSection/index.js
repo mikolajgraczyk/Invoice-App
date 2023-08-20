@@ -9,10 +9,16 @@ import {
   FilterButton,
   ByStatus,
   StyledFilterButtonArrow,
+  NewInvoiceButton,
+  ButtonInvoiceWord,
 } from "./styled";
 import StatusTab from "./StatusTab";
 import { useSelector } from "react-redux";
-import { selectInvoicesTotalNumber, selectStatusFilter } from "../../invoices/invoicesSlice";
+import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
+import {
+  selectInvoicesTotalNumber,
+  selectStatusFilter,
+} from "../../invoices/invoicesSlice";
 
 const TopSection = () => {
   const [isStatusTabOpen, setIsStatusTabOpen] = useState(false);
@@ -26,12 +32,12 @@ const TopSection = () => {
         <Title>Invoices</Title>
         <FullSubtitle>
           {invoicesTotalNumber
-            ? `There are ${invoicesTotalNumber} ${filter ? filter : "total"} invoices`
+            ? `There are ${invoicesTotalNumber} ${
+                filter ? filter : "total"
+              } invoices`
             : "No invoices"}
         </FullSubtitle>
-        <MobileSubtitle>
-            {invoicesTotalNumber} invoices
-        </MobileSubtitle>
+        <MobileSubtitle>{invoicesTotalNumber} invoices</MobileSubtitle>
       </TitleSection>
       <ButtonsSection>
         <FilterButton
@@ -40,9 +46,17 @@ const TopSection = () => {
           <span>
             Filter <ByStatus>by status</ByStatus>
           </span>
-          <StyledFilterButtonArrow statustab={isStatusTabOpen ? "open" : "closed"}/>
+          <StyledFilterButtonArrow
+            statustab={isStatusTabOpen ? "open" : "closed"}
+          />
         </FilterButton>
-        <StatusTab isStatusTabOpen={isStatusTabOpen}/>
+        <StatusTab isStatusTabOpen={isStatusTabOpen} />
+        <NewInvoiceButton>
+          <NewInvoiceIcon />
+          <span>
+            New <ButtonInvoiceWord>Invoice</ButtonInvoiceWord>
+          </span>
+        </NewInvoiceButton>
       </ButtonsSection>
     </StyledTopSection>
   );

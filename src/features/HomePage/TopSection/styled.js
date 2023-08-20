@@ -36,9 +36,9 @@ export const FullSubtitle = styled.span`
   letter-spacing: -0.1px;
   transition: 0.4s;
 
-  @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
-  };
+  }
 `;
 
 export const MobileSubtitle = styled.span`
@@ -49,13 +49,19 @@ export const MobileSubtitle = styled.span`
   letter-spacing: -0.1px;
   transition: 0.4s;
 
-  @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: block;
-  };
+  }
 `;
 
 export const ButtonsSection = styled.div`
   position: relative;
+  display: flex;
+  gap: 40.54px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    gap: 18.54px;
+  }
 `;
 
 export const FilterButton = styled.button`
@@ -92,10 +98,37 @@ export const StyledFilterButtonArrow = styled(FilterButtonArrow)`
       transition: 0.4s;
     `};
 
-    ${({ statustab }) =>
+  ${({ statustab }) =>
     statustab === "closed" &&
     css`
       transform: rotate(0);
       transition: 0.4s;
     `};
+`;
+
+export const NewInvoiceButton = styled.button`
+  background: ${({ theme }) => theme.newInvoiceButton.background};
+  color: ${({ theme }) => theme.newInvoiceButton.text};
+  border: none;
+  border-radius: 24px;
+  padding: 8px 17px 8px 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+
+  &:hover{
+    cursor: pointer;
+    background: ${({theme}) => theme.newInvoiceButton.backgroundHover};
+  }
+`;
+
+export const ButtonInvoiceWord = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
 `;

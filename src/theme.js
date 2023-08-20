@@ -44,7 +44,8 @@ export const lightTheme = {
     boxBackground: colorNames.selago,
   },
   newInvoiceButton: {
-    background: colorNames.heliotrope,
+    background: colorNames.cornflowerBlue,
+    backgroundHover: colorNames.heliotrope,
     text: colorNames.white,
   },
   bar: {
@@ -128,7 +129,8 @@ export const darkTheme = {
     boxBackground: colorNames.mirage,
   },
   newInvoiceButton: {
-    background: colorNames.heliotrope,
+    background: colorNames.cornflowerBlue,
+    backgroundHover: colorNames.heliotropen,
     text: colorNames.white,
   },
   bar: {

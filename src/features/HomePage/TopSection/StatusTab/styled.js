@@ -29,6 +29,8 @@ export const Label = styled.label`
   display: flex;
   align-items: center;
   gap: 13px;
+  color: ${({ theme }) => theme.statusTab.text};
+  transition: 0.4s;
 
   input[type="checkbox"] {
     appearance: none;
@@ -40,6 +42,7 @@ export const Label = styled.label`
     border: 1px solid ${({ theme }) => theme.statusTab.box};
     border-radius: 2px;
     cursor: pointer;
+    transition: 0.4s;
 
     &:checked {
       background-color: ${({ theme }) => theme.statusTab.box};
