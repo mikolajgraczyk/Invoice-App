@@ -1,31 +1,31 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
-  setStatusFilter,
-  selectStatusFilter,
-} from "../../../invoices/invoicesSlice";
-import { StyledStatusTab, Label } from "./styled";
+  setFilterStatus,
+  selectfilterStatus,
+} from "../../../invoicesSlice";
+import { StyledFilterStatusTab, Label } from "./styled";
 
-const StatusTab = ({ isStatusTabOpen }) => {
+const FilterStatusTab = ({ isStatusTabOpen }) => {
   const dispatch = useDispatch();
 
-  const selectedStatusFilter = useSelector(selectStatusFilter);
+  const selectedfilterStatus = useSelector(selectfilterStatus);
 
   const handleStatusChange = (status) => {
-    if (selectedStatusFilter === status) {
-      dispatch(setStatusFilter(null));
+    if (selectedfilterStatus === status) {
+      dispatch(setFilterStatus(null));
       return;
     }
 
-    dispatch(setStatusFilter(status));
+    dispatch(setFilterStatus(status));
   };
 
   return (
-    <StyledStatusTab statusTab={isStatusTabOpen}>
+    <StyledFilterStatusTab statusTab={isStatusTabOpen}>
       <Label>
         <input
           type="checkbox"
           onChange={() => handleStatusChange("draft")}
-          checked={selectedStatusFilter === "draft"}
+          checked={selectedfilterStatus === "draft"}
         />
         Draft
       </Label>
@@ -33,7 +33,7 @@ const StatusTab = ({ isStatusTabOpen }) => {
         <input
           type="checkbox"
           onChange={() => handleStatusChange("pending")}
-          checked={selectedStatusFilter === "pending"}
+          checked={selectedfilterStatus === "pending"}
         />
         Pending
       </Label>
@@ -41,12 +41,12 @@ const StatusTab = ({ isStatusTabOpen }) => {
         <input
           type="checkbox"
           onChange={() => handleStatusChange("paid")}
-          checked={selectedStatusFilter === "paid"}
+          checked={selectedfilterStatus === "paid"}
         />
         Paid
       </Label>
-    </StyledStatusTab>
+    </StyledFilterStatusTab>
   );
 };
 
-export default StatusTab;
+export default FilterStatusTab;

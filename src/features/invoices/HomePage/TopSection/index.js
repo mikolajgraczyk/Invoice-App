@@ -12,19 +12,22 @@ import {
   NewInvoiceButton,
   ButtonInvoiceWord,
 } from "./styled";
-import StatusTab from "./StatusTab";
-import { useSelector } from "react-redux";
-import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
 import {
   selectInvoicesTotalNumber,
-  selectStatusFilter,
-} from "../../invoices/invoicesSlice";
+  selectfilterStatus,
+  triggerNewInvoice,
+} from "../../invoicesSlice"
+import StatusTab from "./FilterStatusTab";
+import { useSelector, useDispatch } from "react-redux";
+import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
 
 const TopSection = () => {
   const [isStatusTabOpen, setIsStatusTabOpen] = useState(false);
 
+  const dispatch = useDispatch();
+
   const invoicesTotalNumber = useSelector(selectInvoicesTotalNumber);
-  const filter = useSelector(selectStatusFilter);
+  const filter = useSelector(selectfilterStatus);
 
   return (
     <StyledTopSection>
@@ -51,7 +54,7 @@ const TopSection = () => {
           />
         </FilterButton>
         <StatusTab isStatusTabOpen={isStatusTabOpen} />
-        <NewInvoiceButton>
+        <NewInvoiceButton onClick={() => dispatch(triggerNewInvoice())}>
           <NewInvoiceIcon />
           <span>
             New <ButtonInvoiceWord>Invoice</ButtonInvoiceWord>

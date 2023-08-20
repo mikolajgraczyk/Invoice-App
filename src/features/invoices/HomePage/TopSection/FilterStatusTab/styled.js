@@ -1,10 +1,10 @@
 import styled, { css } from "styled-components";
 
-export const StyledStatusTab = styled.div`
+export const StyledFilterStatusTab = styled.div`
   background: ${({ theme }) => theme.statusTab.background};
-  padding: 24px 88px 24px 24px;
   position: absolute;
   top: 37px;
+  padding: 16px 0 16px;
   display: none;
   box-shadow: 0px 10px 20px 0px rgba(72, 84, 159, 0.25);
   border-radius: 8px;
@@ -20,17 +20,19 @@ export const StyledStatusTab = styled.div`
     css`
       display: flex;
       flex-direction: column;
-      gap: 16px;
       align-items: flex-start;
     `}
 `;
 
 export const Label = styled.label`
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 13px;
+  padding: 8px 88px 8px 24px;
   color: ${({ theme }) => theme.statusTab.text};
   transition: 0.4s;
+  
 
   input[type="checkbox"] {
     appearance: none;
@@ -41,12 +43,20 @@ export const Label = styled.label`
     background: ${({ theme }) => theme.statusTab.boxBackground};
     border: 1px solid ${({ theme }) => theme.statusTab.box};
     border-radius: 2px;
-    cursor: pointer;
-    transition: 0.4s;
+    transition: all 0.4s, transform 0.1s;
 
     &:checked {
       background-color: ${({ theme }) => theme.statusTab.box};
       border-color: ${({ theme }) => theme.statusTab.box};
+    }
+
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 `;

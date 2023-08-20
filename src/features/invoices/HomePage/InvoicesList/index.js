@@ -1,6 +1,6 @@
 import {StyledInvoicesList} from "./styled";
 import { useSelector } from "react-redux";
-import { selectInvoices } from "../../invoices/invoicesSlice";
+import { selectInvoices } from "../../invoicesSlice"
 import Tile from "./Tile";
 
 const InvoicesList = () => {
