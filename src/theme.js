@@ -54,6 +54,9 @@ export const lightTheme = {
     themeIconHover: colorNames.selago,
     line: colorNames.fiord,
   },
+  scrollbar: {
+    background: colorNames.selago,
+  },
   tile: {
     background: colorNames.white,
     mainText: colorNames.vulcan,
@@ -138,6 +141,9 @@ export const darkTheme = {
     themeIcon: colorNames.wildBlueYonder,
     themeIconHover: colorNames.selago,
     line: colorNames.fiord,
+  },
+  scrollbar: {
+    background: colorNames.ebonyClay,
   },
   tile: {
     background: colorNames.mirage,
