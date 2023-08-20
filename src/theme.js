@@ -37,10 +37,11 @@ export const lightTheme = {
     text1: colorNames.baliHai,
     arrow: colorNames.cornflowerBlue,
   },
-  filterSelector: {
+  statusTab: {
     background: colorNames.white,
-    text: colorNames.vulcan,
+    text: colorNames.mirage,
     box: colorNames.cornflowerBlue,
+    boxBackground: colorNames.selago,
   },
   newInvoiceButton: {
     background: colorNames.heliotrope,
@@ -120,10 +121,11 @@ export const darkTheme = {
     text1: colorNames.selago,
     arrow: colorNames.cornflowerBlue,
   },
-  filterSelector: {
+  statusTab: {
     background: colorNames.ebonyClay,
     text: colorNames.white,
     box: colorNames.cornflowerBlue,
+    boxBackground: colorNames.mirage,
   },
   newInvoiceButton: {
     background: colorNames.heliotrope,

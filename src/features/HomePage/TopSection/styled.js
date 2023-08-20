@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { ReactComponent as FilterButtonArrow } from "./FilterButtonArrow.svg";
 
 export const StyledTopSection = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const TitleSection = styled.div`
@@ -26,12 +29,73 @@ export const Title = styled.h1`
   }
 `;
 
-export const Subtitle = styled.span`
+export const FullSubtitle = styled.span`
   color: ${({ theme }) => theme.main.text1};
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.1px;
   transition: 0.4s;
+
+  @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+    display: none;
+  };
 `;
 
-export const ButtonsSection = styled.div``;
+export const MobileSubtitle = styled.span`
+  display: none;
+  color: ${({ theme }) => theme.main.text1};
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.1px;
+  transition: 0.4s;
+
+  @media(max-width: ${({theme}) => theme.breakpoint.mobileMax}px){
+    display: block;
+  };
+`;
+
+export const ButtonsSection = styled.div`
+  position: relative;
+`;
+
+export const FilterButton = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: ${({ theme }) => theme.main.mainText};
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: 0.4s;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const ByStatus = styled.span`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
+`;
+
+export const StyledFilterButtonArrow = styled(FilterButtonArrow)`
+  ${({ statustab }) =>
+    statustab === "open" &&
+    css`
+      transform: rotate(-180deg);
+      transition: 0.4s;
+    `};
+
+    ${({ statustab }) =>
+    statustab === "closed" &&
+    css`
+      transform: rotate(0);
+      transition: 0.4s;
+    `};
+`;

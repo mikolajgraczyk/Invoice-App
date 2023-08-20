@@ -6,19 +6,40 @@ const invoicesSlice = createSlice({
   initialState: {
     invoices: defaultInvoices,
     isLightTheme: true,
+    statusFilter: null,
   },
   reducers: {
     toggleTheme: (state) => {
       state.isLightTheme = !state.isLightTheme;
     },
+    setStatusFilter: (state, { payload: status }) => {
+      state.statusFilter = status;
+    },
   },
 });
 
-export const { toggleTheme } = invoicesSlice.actions;
+export const { toggleTheme, setStatusFilter } = invoicesSlice.actions;
 
 export const selectInvoicesState = (state) => state.invoices;
-export const selectInvoices = (state) => selectInvoicesState(state).invoices;
-export const selectIsLightTheme = (state) => selectInvoicesState(state).isLightTheme;
-export const selectInvoicesTotalNumber = (state) => selectInvoices(state).length;
+
+export const selectStatusFilter = (state) =>
+  selectInvoicesState(state).statusFilter;
+
+export const selectInvoices = (state) => {
+  const invoicesState = selectInvoicesState(state).invoices;
+  const statusFilter = selectStatusFilter(state);
+
+  if (!statusFilter) {
+    return invoicesState;
+  }
+
+  return invoicesState.filter((invoice) => invoice.status === statusFilter);
+};
+
+export const selectIsLightTheme = (state) =>
+  selectInvoicesState(state).isLightTheme;
+
+export const selectInvoicesTotalNumber = (state) =>
+  selectInvoices(state).length;
 
 export default invoicesSlice.reducer;
