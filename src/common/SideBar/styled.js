@@ -12,6 +12,7 @@ export const StyledSideBar = styled.aside`
   position: fixed;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 5;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
@@ -62,11 +63,15 @@ export const ThemeButton = styled.button`
   border: none;
   padding: 0;
   color: ${({ theme }) => theme.bar.themeIcon};
-  transition: 0.2s;
+  transition: all 0.4s, transform 0.1s;
 
   &:hover {
     cursor: pointer;
     color: ${({ theme }) => theme.bar.themeIconHover};
+  }
+
+  &:active{
+    transform: rotate(120deg);
   }
 `;
 

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { selectIsLightTheme } from "./features/invoices/invoicesSlice";
 import { GlobalStyle } from "./GlobalStyle";
 import HomePage from "./features/invoices/HomePage"
+import FormPanel from "./common/FormPanel";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
@@ -15,6 +16,7 @@ function App() {
       <GlobalStyle />
       <Wrapper>
         <SideBar />
+        <FormPanel />
         <HomePage />
       </Wrapper>
     </ThemeProvider>

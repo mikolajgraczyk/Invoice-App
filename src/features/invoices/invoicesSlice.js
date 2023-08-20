@@ -47,4 +47,7 @@ export const selectIsLightTheme = (state) =>
 export const selectInvoicesTotalNumber = (state) =>
   selectInvoices(state).length;
 
+export const selectFormPanelStatus = (state) =>
+  selectInvoicesState(state).formPanelStatus;
+
 export default invoicesSlice.reducer;

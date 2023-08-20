@@ -29,6 +29,11 @@ const TopSection = () => {
   const invoicesTotalNumber = useSelector(selectInvoicesTotalNumber);
   const filter = useSelector(selectfilterStatus);
 
+  const newInvoiceButtonHandler = () => {
+    dispatch(triggerNewInvoice())
+    window.scrollTo({top: 0, behavior: "smooth"});
+  };
+
   return (
     <StyledTopSection>
       <TitleSection>
@@ -54,7 +59,7 @@ const TopSection = () => {
           />
         </FilterButton>
         <StatusTab isStatusTabOpen={isStatusTabOpen} />
-        <NewInvoiceButton onClick={() => dispatch(triggerNewInvoice())}>
+        <NewInvoiceButton onClick={newInvoiceButtonHandler}>
           <NewInvoiceIcon />
           <span>
             New <ButtonInvoiceWord>Invoice</ButtonInvoiceWord>

@@ -85,7 +85,7 @@ export const lightTheme = {
     rectangleFooter: colorNames.oxfordBlue,
     rectangleFooterText: colorNames.white,
   },
-  createInvoice: {
+  formPanel: {
     background: colorNames.white,
     mainText: colorNames.vulcan,
     hash: colorNames.baliHai,
@@ -170,7 +170,7 @@ export const darkTheme = {
     rectangleFooter: colorNames.vulcan,
     rectangleFooterText: colorNames.white,
   },
-  createInvoice: {
+  formPanel: {
     background: colorNames.cinder,
     mainText: colorNames.white,
     hash: colorNames.baliHai,
