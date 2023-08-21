@@ -16,8 +16,8 @@ function App() {
       <GlobalStyle />
       <Wrapper>
         <SideBar />
-        <FormPanel />
         <HomePage />
+        <FormPanel />
       </Wrapper>
     </ThemeProvider>
   );

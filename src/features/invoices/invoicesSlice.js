@@ -5,7 +5,7 @@ const invoicesSlice = createSlice({
   name: "invoices",
   initialState: {
     invoices: defaultInvoices,
-    isLightTheme: true,
+    isLightTheme: false,
     filterStatus: null,
     formPanelStatus: null,
   },
@@ -19,11 +19,22 @@ const invoicesSlice = createSlice({
     triggerNewInvoice: (state) => {
       state.formPanelStatus = "create";
     },
+    hideFormPanel: (state) => {
+      state.formPanelStatus = null;
+    },
+    addNewInvoice: ({ invoices }, { payload: invoice }) => {
+      invoices.push(invoice);
+    },
   },
 });
 
-export const { toggleTheme, setFilterStatus, triggerNewInvoice } =
-  invoicesSlice.actions;
+export const {
+  toggleTheme,
+  setFilterStatus,
+  triggerNewInvoice,
+  hideFormPanel,
+  addNewInvoice,
+} = invoicesSlice.actions;
 
 export const selectInvoicesState = (state) => state.invoices;
 

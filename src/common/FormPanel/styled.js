@@ -7,14 +7,15 @@ export const StyledFormPanel = styled.div`
   height: 100%;
   position: fixed;
   z-index: 4;
-  display: none;
+  display: flex;
   border-radius: 0px 20px 20px 0px;
+  transform: translateX(-800px);
   transition: 0.4s;
 
   ${({ formPanelStatus }) =>
     formPanelStatus &&
     css`
-      display: flex;
+      transform: translateX(0);
     `}
 
   @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
@@ -26,6 +27,7 @@ export const StyledFormPanel = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: none;
+    width: 100%;
     border-radius: 0;
     padding: 0 8px 0 24px;
   }
@@ -34,7 +36,8 @@ export const StyledFormPanel = styled.div`
 export const Wrapper = styled.div`
   overflow-y: auto;
   padding: 59px 24px 16px 0;
-  
+  width: 100%;
+
   ::-webkit-scrollbar {
     width: 8px;
   }
@@ -49,9 +52,9 @@ export const Wrapper = styled.div`
     border-radius: 4px;
   }
 
-  @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 59px 24px 38px 0;
-  };
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     padding: 33px 16px 88px 0;
