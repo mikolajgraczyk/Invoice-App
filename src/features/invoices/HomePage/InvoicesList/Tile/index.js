@@ -15,8 +15,8 @@ import {
   StyledTileArrow,
 } from "./styled";
 
-const Tile = ({ id, term, clientName, totalPrice, paymentStatus }) => {
-  const parsedDate = parse(term, "dd.MM.yyyy", new Date());
+const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
+  const parsedDate = parse(termDate, "yyyy-dd-MM", new Date());
   const formattedDate = format(parsedDate, "dd MMM yyyy");
 
   return (

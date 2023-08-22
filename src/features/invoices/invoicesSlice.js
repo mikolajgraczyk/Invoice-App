@@ -5,7 +5,7 @@ const invoicesSlice = createSlice({
   name: "invoices",
   initialState: {
     invoices: defaultInvoices,
-    isLightTheme: false,
+    isLightTheme: true,
     filterStatus: null,
     formPanelStatus: null,
   },

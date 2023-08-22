@@ -1,13 +1,7 @@
-import {
-  StyledFormFieldset,
-  FieldsetLegend,
-  LongLabel,
-  Label,
-  CountryLabel,
-  Input,
-} from "./styled";
+import { StyledFieldset, LongLabel, Label, Input } from "../fieldsets/index";
+import { FieldsetLegend, CountryLabel } from "./styled";
 
-const FormFieldset = ({ legend, formData, setFormData }) => {
+const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
   const onInputChange = ({ target }) => {
     const { name, value } = target;
 
@@ -21,7 +15,7 @@ const FormFieldset = ({ legend, formData, setFormData }) => {
   };
 
   return (
-    <StyledFormFieldset>
+    <StyledFieldset>
       <FieldsetLegend>{legend}</FieldsetLegend>
       {legend === "Bill To" && (
         <>
@@ -81,8 +75,8 @@ const FormFieldset = ({ legend, formData, setFormData }) => {
           onChange={onInputChange}
         />
       </CountryLabel>
-    </StyledFormFieldset>
+    </StyledFieldset>
   );
 };
 
-export default FormFieldset;
+export default PersonalInfoFieldset;

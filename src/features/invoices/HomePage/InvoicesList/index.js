@@ -12,7 +12,7 @@ const InvoicesList = () => {
         <Tile
           key={invoice.id}
           id={invoice.id}
-          term={invoice.to.paymentTerms}
+          termDate={invoice.to.paymentTermsDate}
           clientName={invoice.to.clientName}
           totalPrice={invoice.totalPrice}
           paymentStatus={invoice.status}

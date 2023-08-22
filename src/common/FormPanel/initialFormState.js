@@ -1,3 +1,8 @@
+import { format } from "date-fns";
+
+const todaysDate = new Date();
+const formattedTodaysDate = format(todaysDate, "yyyy-MM-dd");
+
 export const initialFormState = {
   status: "pending",
   from: {
@@ -12,8 +17,11 @@ export const initialFormState = {
     streetAdress: "",
     city: "",
     postalCode: "",
-    paymentTerms: "19.08.2021",
     country: "",
+    date: formattedTodaysDate,
+    paymentTerms: 30,
+    paymentTermsDate: "",
+    projectDescription: "",
   },
   totalPrice: "TEST",
 };

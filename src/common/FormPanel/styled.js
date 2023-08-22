@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledFormPanel = styled.div`
   max-width: 719px;
@@ -9,14 +9,7 @@ export const StyledFormPanel = styled.div`
   z-index: 4;
   display: flex;
   border-radius: 0px 20px 20px 0px;
-  transform: translateX(-800px);
   transition: 0.4s;
-
-  ${({ formPanelStatus }) =>
-    formPanelStatus &&
-    css`
-      transform: translateX(0);
-    `}
 
   @media(max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     max-width: 616px;

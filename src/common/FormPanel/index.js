@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { StyledFormPanel, Wrapper } from "./styled";
 import { Backdrop } from "../Backdrop";
-import { useSelector, useDispatch } from "react-redux";
-import { generateId } from "./generateId";
-import { initialFormState } from "./initialFormState";
 import {
   selectFormPanelStatus,
   addNewInvoice,
   hideFormPanel,
 } from "../../features/invoices/invoicesSlice";
-import FormFieldset from "./FormFieldset";
+import PersonalInfoFieldset from "./PersonalInfoFieldset";
+import DetailsFieldset from "./DetailsFieldset";
+import { initialFormState } from "./initialFormState";
 
 const FormPanel = () => {
   const [formData, setFormData] = useState(initialFormState);
@@ -17,39 +17,39 @@ const FormPanel = () => {
   const dispatch = useDispatch();
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
-  useEffect(() => {
-    document.body.style.overflow = formPanelStatus ? "hidden" : "auto";
-  }, [formPanelStatus]);
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     dispatch(hideFormPanel());
-    dispatch(
-      addNewInvoice({
-        id: generateId(),
-        ...formData,
-      })
-    );
 
-    setFormData(initialFormState);
+    if (formPanelStatus === "create") {
+      dispatch(addNewInvoice(formData));
+    } else {
+      console.log("edycja");
+    }
   };
 
   return (
     <>
-      <StyledFormPanel formPanelStatus={formPanelStatus}>
+      <StyledFormPanel>
         <Wrapper>
           <form onSubmit={handleFormSubmit}>
-            <FormFieldset
+            <PersonalInfoFieldset
               legend="Bill From"
               formData={formData.from}
               setFormData={setFormData}
             />
-            <FormFieldset
+            <PersonalInfoFieldset
               legend="Bill To"
               formData={formData.to}
               setFormData={setFormData}
             />
+            <DetailsFieldset
+              formData={formData.to}
+              setFormData={setFormData}
+              formPanelStatus={formPanelStatus}
+            />
+
             <button type="submit">TEST SUBMIT</button>
           </form>
         </Wrapper>

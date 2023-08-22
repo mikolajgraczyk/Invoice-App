@@ -101,6 +101,10 @@ export const lightTheme = {
     fieldsetText: colorNames.cornflowerBlue,
     itemListText: colorNames.waterloo,
     totalPrice: colorNames.baliHai,
+    paymentSelect: colorNames.vulcan,
+    paymentSelectHover: colorNames.cornflowerBlue, 
+    paymentSelectOptionBackground: colorNames.white,
+    paymentSelectOptionTextHover: colorNames.cornflowerBlue,
     bottomButtonBackground: colorNames.whiteLilac,
     bottomButtonText: colorNames.shipCove,
     saveDraftBackground: colorNames.oxfordBlue,
@@ -117,6 +121,7 @@ export const lightTheme = {
     deleteBackground: colorNames.burntSienna,
     deleteText: colorNames.white,
   },
+  shadow: "0px 10px 20px 0px rgba(72, 84, 159, 0.25)",
   breakpoint,
 };
 
@@ -191,6 +196,10 @@ export const darkTheme = {
     fieldsetText: colorNames.cornflowerBlue,
     itemListText: colorNames.waterloo,
     totalPrice: colorNames.selago,
+    paymentSelect: colorNames.selago,
+    paymentSelectHover: colorNames.heliotrope, 
+    paymentSelectOptionBackground: colorNames.ebonyClay,
+    paymentSelectOptionTextHover: colorNames.heliotrope,
     bottomButtonBackground: colorNames.ebonyClay,
     bottomButtonText: colorNames.selago,
     saveDraftBackground: colorNames.oxfordBlue,
@@ -207,5 +216,6 @@ export const darkTheme = {
     deleteBackground: colorNames.burntSienna,
     deleteText: colorNames.white,
   },
+  shadow: "box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.25)",
   breakpoint,
 };

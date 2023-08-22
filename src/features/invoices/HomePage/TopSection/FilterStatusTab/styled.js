@@ -6,7 +6,7 @@ export const StyledFilterStatusTab = styled.div`
   top: 37px;
   padding: 16px 0 16px;
   display: none;
-  box-shadow: 0px 10px 20px 0px rgba(72, 84, 159, 0.25);
+  box-shadow: ${({theme}) => theme.shadow};
   border-radius: 8px;
   z-index: 1;
   font-size: 15px;

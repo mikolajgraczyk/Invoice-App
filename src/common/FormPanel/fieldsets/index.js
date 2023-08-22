@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledFormFieldset = styled.fieldset`
+export const StyledFieldset = styled.fieldset`
   border: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -17,16 +17,18 @@ export const StyledFormFieldset = styled.fieldset`
     width: 100%;
     margin-bottom: 41px;
   }
-`;
 
-export const FieldsetLegend = styled.legend`
-  color: ${({ theme }) => theme.formPanel.fieldsetText};
-  margin-bottom: 24px;
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: -0.25px;
-  transition: 0.4s;
+  ${({ location }) =>
+    location === "details" &&
+    css`
+      grid-template-columns: repeat(2, 1fr);
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        grid-template-columns: 1fr;
+        width: 100%;
+        margin-bottom: 69px;
+      }
+    `}
 `;
 
 export const LongLabel = styled.label`
@@ -40,25 +42,24 @@ export const LongLabel = styled.label`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-column-end: 3;
   }
+
+  ${({ location }) =>
+    location === "details" &&
+    css`
+      grid-column-end: 3;
+
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        grid-column-end: 1;
+      }
+    `}
 `;
 
 export const Label = styled.label`
   display: flex;
   flex-direction: column;
   gap: 9px;
+  position: relative;
   transition: 0.4s;
-`;
-
-export const CountryLabel = styled.label`
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  transition: 0.4s;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
 `;
 
 export const Input = styled.input`
