@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/Invoice-App/static/js/main.3adea217.js",
+    "main.js": "/Invoice-App/static/js/main.cfc28590.js",
     "static/js/787.1b1aeb5b.chunk.js": "/Invoice-App/static/js/787.1b1aeb5b.chunk.js",
     "index.html": "/Invoice-App/index.html",
     "static/media/UserDefaultIcon.svg": "/Invoice-App/static/media/UserDefaultIcon.684306b73e3f12b0e3678c07dd4c4115.svg",
@@ -9,13 +9,15 @@
     "static/media/SwitchToDarkIcon.svg": "/Invoice-App/static/media/SwitchToDarkIcon.f83a085f626a20e8b293b0fe000035b9.svg",
     "static/media/CombinedShape.svg": "/Invoice-App/static/media/CombinedShape.4b105dbcf227c0dc212be0b6cbbead5e.svg",
     "static/media/NewInvoiceIcon.svg": "/Invoice-App/static/media/NewInvoiceIcon.9a934af16fab3053e29672d198653705.svg",
+    "static/media/ArrowUp.svg": "/Invoice-App/static/media/ArrowUp.3218cff90b48b44e25d78ac1614c6141.svg",
+    "static/media/ArrowDown.svg": "/Invoice-App/static/media/ArrowDown.e7269df3c6caa518ad60a55a3a312309.svg",
     "static/media/FilterButtonArrow.svg": "/Invoice-App/static/media/FilterButtonArrow.591f705a92d1df60a20e2d95c05d016d.svg",
     "static/media/TileArrow.svg": "/Invoice-App/static/media/TileArrow.82800ffbd4f020fd122cdf02fd3ac1cd.svg",
     "static/media/StatusCircle.svg": "/Invoice-App/static/media/StatusCircle.56ff6224dcdf9942c99cb6aaebf5f30b.svg",
-    "main.3adea217.js.map": "/Invoice-App/static/js/main.3adea217.js.map",
+    "main.cfc28590.js.map": "/Invoice-App/static/js/main.cfc28590.js.map",
     "787.1b1aeb5b.chunk.js.map": "/Invoice-App/static/js/787.1b1aeb5b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3adea217.js"
+    "static/js/main.cfc28590.js"
   ]
 }
