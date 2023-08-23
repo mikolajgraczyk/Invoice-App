@@ -9,6 +9,7 @@ import {
 } from "../../features/invoices/invoicesSlice";
 import PersonalInfoFieldset from "./PersonalInfoFieldset";
 import DetailsFieldset from "./DetailsFieldset";
+import ItemList from "./ItemList";
 import { initialFormState } from "./initialFormState";
 
 const FormPanel = () => {
@@ -49,6 +50,7 @@ const FormPanel = () => {
               setFormData={setFormData}
               formPanelStatus={formPanelStatus}
             />
+            <ItemList itemList={formData.itemList} setFormData={setFormData} />
 
             <button type="submit">TEST SUBMIT</button>
           </form>

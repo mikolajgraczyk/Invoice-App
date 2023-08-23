@@ -10,7 +10,8 @@ export const StyledFieldset = styled.fieldset`
   font-size: 13px;
   line-height: 15px;
   letter-spacing: -0.1px;
-  margin-bottom: 49px;
+  padding: 0;
+  margin: 0 0 49px 1px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: repeat(2, 1fr);

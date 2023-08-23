@@ -23,5 +23,35 @@ export const initialFormState = {
     paymentTermsDate: "",
     projectDescription: "",
   },
-  totalPrice: "TEST",
+  itemList: [
+    {
+      itemId: "43",
+      itemName: "Web Development",
+      quantity: 1,
+      price: 1800.9,
+      totalItemPrice: 1800.9,
+    },
+    {
+      itemId: "32",
+      itemName: "Chlebek",
+      quantity: 3,
+      price: 4.5,
+      totalItemPrice: 13.5,
+    },
+    {
+      itemId: "b8c8",
+      itemName: "Banner Design",
+      quantity: 1,
+      price: 156,
+      totalItemPrice: 156,
+    },
+    {
+      itemId: "b9c9",
+      itemName: "Email Design",
+      quantity: 2,
+      price: 100,
+      totalItemPrice: 200,
+    },
+  ],
+  totalPrice: 1813.95,
 };

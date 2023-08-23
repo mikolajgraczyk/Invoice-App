@@ -21,9 +21,11 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "4zs8",
         itemName: "Web Development",
         quantity: 1,
         price: 1800.9,
+        totalItemPrice: 1800.9,
       },
     ],
     totalPrice: 1800.9,
@@ -50,14 +52,18 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "b8c8",
         itemName: "Banner Design",
         quantity: 1,
         price: 156,
+        totalItemPrice: 156,
       },
       {
+        itemId: "b9c9",
         itemName: "Email Design",
         quantity: 2,
-        price: 200,
+        price: 100,
+        totalItemPrice: 200,
       },
     ],
     totalPrice: 556,
@@ -84,9 +90,11 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "b9c8",
         itemName: "Mobile App",
         quantity: 1,
         price: 14002.33,
+        totalItemPrice: 14002.33,
       },
     ],
     totalPrice: 14002.33,
@@ -113,9 +121,11 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "8b7az4gs6e",
         itemName: "Logo Design",
         quantity: 1,
         price: 102.04,
+        totalItemPrice: 102.04,
       },
     ],
     totalPrice: 102.04,
@@ -142,9 +152,11 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "9bia234vd",
         itemName: "Social Media Campaign",
         quantity: 1,
         price: 4032.33,
+        totalItemPrice: 4032.33,
       },
     ],
     totalPrice: 4032.33,
@@ -171,9 +183,11 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "24Svt56e",
         itemName: "Consulting",
         quantity: 1,
         price: 6155.91,
+        totalItemPrice: 6155.91,
       },
     ],
     totalPrice: 6155.91,
@@ -200,14 +214,18 @@ export const defaultInvoices = [
     },
     itemList: [
       {
+        itemId: "9b7a5c3e",
         itemName: "Blog Articles",
         quantity: 3,
-        price: 1000.68,
+        price: 333.56,
+        totalItemPrice: 1000.68,
       },
       {
+        itemId: "9b7a4A6e",
         itemName: "Website Copy",
         quantity: 1,
         price: 2101.36,
+        totalItemPrice: 2101.36,
       },
     ],
     totalPrice: 3102.04,
