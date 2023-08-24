@@ -6,10 +6,6 @@ export const StyledFieldset = styled.fieldset`
   grid-template-columns: repeat(3, 1fr);
   row-gap: 25px;
   column-gap: 24px;
-  color: ${({ theme }) => theme.formPanel.inputName};
-  font-size: 13px;
-  line-height: 15px;
-  letter-spacing: -0.1px;
   padding: 0;
   margin: 0 0 49px 1px;
 
@@ -36,9 +32,13 @@ export const LongLabel = styled.label`
   display: flex;
   flex-direction: column;
   gap: 9px;
-  transition: 0.4s;
+  color: ${({ theme }) => theme.formPanel.inputName};
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.1px;
   grid-column-start: 1;
   grid-column-end: 4;
+  transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-column-end: 3;
@@ -60,7 +60,33 @@ export const Label = styled.label`
   flex-direction: column;
   gap: 9px;
   position: relative;
+  color: ${({ theme }) => theme.formPanel.inputName};
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.1px;
   transition: 0.4s;
+
+  ${({ countryLabel }) =>
+    countryLabel &&
+    css`
+      @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    `}
+
+  ${({ itemList }) =>
+    itemList &&
+    css`
+      gap: 15px;
+    `}
+
+  ${({ itemName }) =>
+    itemName &&
+    css`
+      grid-column-start: 1;
+      grid-column-end: 5;
+    `}
 `;
 
 export const Input = styled.input`

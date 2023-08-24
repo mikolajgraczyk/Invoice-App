@@ -9,15 +9,3 @@ export const FieldsetLegend = styled.legend`
   letter-spacing: -0.25px;
   transition: 0.4s;
 `;
-
-export const CountryLabel = styled.label`
-  display: flex;
-  flex-direction: column;
-  gap: 9px;
-  transition: 0.4s;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-`;

@@ -16,15 +16,6 @@ export const Title = styled.span`
   }
 `;
 
-export const DesktopList = styled.div`
-  display: grid;
-  column-gap: 16px;
-  row-gap: 18px;
-  grid-template-columns: 214px 46px 100px 56px auto;
-  align-items: center;
-  margin-left: 1px;
-`;
-
 export const ListFieldName = styled.span`
   color: ${({ theme }) => theme.formPanel.inputName};
   font-size: 13px;
@@ -48,6 +39,10 @@ export const ItemTotalPrice = styled.span`
   line-height: 15px;
   letter-spacing: -0.25px;
   transition: 0.4s;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 18px;
+  }
 `;
 
 export const RemoveItemButton = styled.button`
@@ -62,5 +57,33 @@ export const RemoveItemButton = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 16px;
+  }
+`;
+
+export const AddItemButton = styled.button`
+  margin-top: 18px;
+  width: 100%;
+  padding: 18px 0 15px;
+  border: none;
+  border-radius: 24px;
+  background: ${({ theme }) => theme.formPanel.bottomButtonBackground};
+  color: ${({ theme }) => theme.formPanel.bottomButtonText};
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  transition: 0.4s;
+
+  &:hover {
+    background: ${({ theme }) => theme.formPanel.bottomButtonHover};
+    cursor: pointer;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 48px;
   }
 `;

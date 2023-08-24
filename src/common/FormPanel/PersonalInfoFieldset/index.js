@@ -66,7 +66,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
           onChange={onInputChange}
         />
       </Label>
-      <CountryLabel>
+      <Label countryLabel>
         Country
         <Input
           type="text"
@@ -74,7 +74,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
           value={formData.country}
           onChange={onInputChange}
         />
-      </CountryLabel>
+      </Label>
     </StyledFieldset>
   );
 };

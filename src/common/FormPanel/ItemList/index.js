@@ -1,16 +1,25 @@
-import { Fragment } from "react";
-import { Input } from "../fieldsets/index";
-import {
-  StyledItemList,
-  Title,
-  DesktopList,
-  ListFieldName,
-  ItemTotalPrice,
-  RemoveItemButton,
-} from "./styled";
-import { ReactComponent as TrashIcon } from "./TrashIcon.svg";
+import { nanoid } from "@reduxjs/toolkit";
+import { StyledItemList, Title, AddItemButton } from "./styled";
+import DesktopItemList from "./DesktopItemList";
+import MobileItemList from "./MobileItemList";
 
 const ItemList = ({ itemList, setFormData }) => {
+  const onInputChange = (index, target) => {
+    const { name, value } = target;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      itemList: itemList.map((item, itemIndex) =>
+        itemIndex === index
+          ? {
+              ...item,
+              [name]: value,
+            }
+          : item
+      ),
+    }));
+  };
+
   const removeItemHandler = (event, index) => {
     event.preventDefault();
 
@@ -23,30 +32,40 @@ const ItemList = ({ itemList, setFormData }) => {
     }));
   };
 
+  const addItemHandler = (event) => {
+    event.preventDefault();
+
+    setFormData((prevData) => ({
+      ...prevData,
+      itemList: [
+        ...prevData.itemList,
+        {
+          itemId: nanoid(),
+          itemName: "",
+          quantity: "",
+          price: "",
+          totalItemPrice: "",
+        },
+      ],
+    }));
+  };
+
   return (
     <StyledItemList>
       <Title>Item List</Title>
-      <DesktopList>
-        <ListFieldName>Item Name</ListFieldName>
-        <ListFieldName>Qty.</ListFieldName>
-        <ListFieldName>Price</ListFieldName>
-        <ListFieldName total>Total</ListFieldName>
-        {itemList.map((item, index) => {
-          return (
-            <Fragment key={item.itemId}>
-              <Input value={item.itemName} />
-              <Input value={item.quantity} />
-              <Input value={item.price} />
-              <ItemTotalPrice>{item.price * item.quantity}</ItemTotalPrice>
-              <RemoveItemButton
-                onClick={(event) => removeItemHandler(event, index)}
-              >
-                <TrashIcon />
-              </RemoveItemButton>
-            </Fragment>
-          );
-        })}
-      </DesktopList>
+      <DesktopItemList
+        itemList={itemList}
+        onInputChange={onInputChange}
+        removeItemHandler={removeItemHandler}
+      />
+      <MobileItemList
+        itemList={itemList}
+        onInputChange={onInputChange}
+        removeItemHandler={removeItemHandler}
+      />
+      <AddItemButton onClick={(event) => addItemHandler(event)}>
+        + Add New Item
+      </AddItemButton>
     </StyledItemList>
   );
 };
