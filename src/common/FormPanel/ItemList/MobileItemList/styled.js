@@ -14,7 +14,7 @@ export const StyledMobileItemList = styled.div`
 export const ItemInputField = styled.div`
     display: grid;
     grid-template-columns: 4fr 6.25fr 3.5fr auto;
-    /* column-gap: 16px;
-    row-gap: 25px; */
+    column-gap: 16px;
+    row-gap: 25px;
     
 `;
