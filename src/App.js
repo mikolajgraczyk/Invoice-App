@@ -12,16 +12,18 @@ import { GlobalStyle } from "./GlobalStyle";
 import HomePage from "./features/invoices/HomePage";
 import FormPanel from "./common/FormPanel";
 
-import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
   useEffect(() => {
-    document.body.style.overflow = formPanelStatus
-      ? disableBodyScroll(document.body)
-      : enableBodyScroll(document.body);
+    if (formPanelStatus) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+      return;
+    }
+    document.body.style.overflow = "auto";
+    document.body.style.touchAction = "auto";
   }, [formPanelStatus]);
 
   return (
