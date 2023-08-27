@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
     body{
     font-family: 'League Spartan', sans-serif;
     background: ${({ theme }) => theme.main.background};
-    touch-action: none;
     transition: 0.4s;
     }
 `;

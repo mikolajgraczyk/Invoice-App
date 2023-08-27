@@ -15,13 +15,14 @@ import {
   StyledUserDefaultIcon,
 } from "./styled";
 
-const SideBar = () => {
+const SideBar = ({ formPanelStatus }) => {
   const isLightTheme = useSelector(selectIsLightTheme);
 
   const dispatch = useDispatch();
+  console.log(formPanelStatus);
 
   return (
-    <StyledSideBar>
+    <StyledSideBar formPanelStatus={formPanelStatus}>
       <div>
         <StyledRectangle />
         <StyledShape />

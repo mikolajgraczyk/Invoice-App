@@ -9,7 +9,6 @@ export const StyledFormPanel = styled.div`
   z-index: 4;
   display: flex;
   border-radius: 0px 20px 20px 0px;
-  touch-action: none;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {

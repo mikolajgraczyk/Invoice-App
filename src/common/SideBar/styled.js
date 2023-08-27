@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as SideBarRectangle } from "./SideBarRectangle.svg";
 import { ReactComponent as CombinedShape } from "./CombinedShape.svg";
 import { ReactComponent as UserDefaultIcon } from "./UserDefaultIcon.svg";
@@ -13,7 +13,6 @@ export const StyledSideBar = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   z-index: 5;
-  touch-action: none;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
@@ -22,7 +21,13 @@ export const StyledSideBar = styled.aside`
     border-radius: 0px;
     flex-direction: row;
     position: static;
-    top: 0;
+
+    ${({ formPanelStatus }) =>
+      formPanelStatus &&
+      css`
+        position: sticky;
+        top: 0;
+      `}
   }
 `;
 

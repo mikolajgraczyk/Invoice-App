@@ -24,7 +24,7 @@ function App() {
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
       <Wrapper>
-        <SideBar />
+        <SideBar formPanelStatus={formPanelStatus}/>
         <HomePage />
         {formPanelStatus && <FormPanel />}
       </Wrapper>
