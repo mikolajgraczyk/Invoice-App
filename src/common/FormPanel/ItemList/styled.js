@@ -50,7 +50,6 @@ export const RemoveItemButton = styled.button`
   display: flex;
   align-items: center;
   background: none;
-  /* max-height: 47px; */
   align-self: center; 
   color: ${({ theme }) => theme.formPanel.totalPrice};
   width: 100%;
