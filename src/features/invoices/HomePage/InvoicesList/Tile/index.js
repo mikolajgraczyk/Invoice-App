@@ -2,14 +2,14 @@ import { parse, format } from "date-fns";
 import { ReactComponent as StatusCircle } from "./StatusCircle.svg";
 import {
   StyledTile,
-  LeftInfoSection,
+  LeftTileSection,
   Hash,
   InvoiceId,
   PaymentTerm,
   Due,
   PaymentDate,
   ClientName,
-  RightInfoSection,
+  RightTileSection,
   TotalPrice,
   Status,
   StyledTileArrow,
@@ -21,7 +21,7 @@ const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
 
   return (
     <StyledTile>
-      <LeftInfoSection>
+      <LeftTileSection>
         <div>
           <Hash>#</Hash>
           <InvoiceId>{id}</InvoiceId>
@@ -30,15 +30,15 @@ const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
           <Due>Due</Due> <PaymentDate>{formattedDate}</PaymentDate>
         </PaymentTerm>
         <ClientName>{clientName}</ClientName>
-      </LeftInfoSection>
-      <RightInfoSection>
+      </LeftTileSection>
+      <RightTileSection>
         <TotalPrice>£ {totalPrice}</TotalPrice>
         <Status status={paymentStatus}>
           <StatusCircle />
           <span>{paymentStatus}</span>
         </Status>
         <StyledTileArrow />
-      </RightInfoSection>
+      </RightTileSection>
     </StyledTile>
   );
 };

@@ -24,11 +24,13 @@ export const StyledTile = styled.li`
   }
 `;
 
-export const LeftInfoSection = styled.div`
+export const LeftTileSection = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 44px;
+  max-width: 305px;
+  width: 100%;
+  justify-content: space-between;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     gap: 28px;
@@ -88,7 +90,7 @@ export const ClientName = styled.span`
   }
 `;
 
-export const RightInfoSection = styled.div`
+export const RightTileSection = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;

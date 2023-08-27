@@ -7,5 +7,6 @@ export const FieldsetLegend = styled.legend`
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  white-space: nowrap;
   transition: 0.4s;
 `;

@@ -1,5 +1,5 @@
 import { StyledFieldset, LongLabel, Label, Input } from "../fieldsets/index";
-import { FieldsetLegend, CountryLabel } from "./styled";
+import { FieldsetLegend } from "./styled";
 
 const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
   const onInputChange = ({ target }) => {
