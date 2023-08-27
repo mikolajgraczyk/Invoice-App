@@ -37,11 +37,11 @@ const MobileItemList = ({ itemList, onInputChange, removeItemHandler }) => (
               Total
               <ItemTotalPrice>{item.price * item.quantity}</ItemTotalPrice>
             </Label>
-            <RemoveItemButton
+            {/* <RemoveItemButton
               onClick={(event) => removeItemHandler(event, index)}
             >
               <TrashIcon />
-            </RemoveItemButton>
+            </RemoveItemButton> */}
           </BottomFields>
         </ItemInputField>
       );
