@@ -46,10 +46,12 @@ export const ItemTotalPrice = styled.span`
 `;
 
 export const RemoveItemButton = styled.button`
+  border: none;
   display: flex;
   align-items: center;
   background: none;
-  border: none;
+  max-height: 47px;
+  align-self: flex-end;
   color: ${({ theme }) => theme.formPanel.totalPrice};
   width: 100%;
   height: 100%;
@@ -57,10 +59,6 @@ export const RemoveItemButton = styled.button`
 
   &:hover {
     cursor: pointer;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    margin-top: 16px;
   }
 `;
 
