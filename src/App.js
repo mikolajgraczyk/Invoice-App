@@ -4,17 +4,27 @@ import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
-import { selectIsLightTheme, selectFormPanelStatus } from "./features/invoices/invoicesSlice";
+import {
+  selectIsLightTheme,
+  selectFormPanelStatus,
+} from "./features/invoices/invoicesSlice";
 import { GlobalStyle } from "./GlobalStyle";
-import HomePage from "./features/invoices/HomePage"
+import HomePage from "./features/invoices/HomePage";
 import FormPanel from "./common/FormPanel";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
   useEffect(() => {
-    document.body.style.overflow = formPanelStatus ? "hidden" : "auto";
+    const targetElement = document.body;
+
+    if (formPanelStatus) {
+      disableBodyScroll(targetElement);
+      return;
+    }
+    enableBodyScroll(targetElement);
   }, [formPanelStatus]);
 
   return (
