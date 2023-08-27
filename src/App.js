@@ -17,13 +17,7 @@ function App() {
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
   useEffect(() => {
-    if (formPanelStatus) {
-      document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
-      return;
-    }
-    document.body.style.overflow = "auto";
-    document.body.style.touchAction = "auto";
+    document.body.style.overflow = formPanelStatus ? "hidden" : "auto";
   }, [formPanelStatus]);
 
   return (

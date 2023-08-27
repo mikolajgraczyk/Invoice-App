@@ -13,6 +13,7 @@ export const StyledSideBar = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   z-index: 5;
+  touch-action: none;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
@@ -71,7 +72,7 @@ export const ThemeButton = styled.button`
     color: ${({ theme }) => theme.bar.themeIconHover};
   }
 
-  &:active{
+  &:active {
     transform: rotate(120deg);
   }
 `;
