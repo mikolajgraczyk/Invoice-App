@@ -27,7 +27,7 @@ export const StyledFormPanel = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  overflow-y: auto;
+  overflow-y: scroll;
   padding: 59px 24px 16px 0;
   width: 100%;
 
