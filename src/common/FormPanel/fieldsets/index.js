@@ -55,7 +55,7 @@ export const LongLabel = styled.label`
     `}
 `;
 
-export const Label = styled.label`
+export const Label = styled.div`
   display: flex;
   flex-direction: column;
   gap: 9px;
