@@ -79,6 +79,7 @@ export const Label = styled.div`
     itemList &&
     css`
       gap: 15px;
+      border: 2px green solid;
     `}
 
   ${({ itemName }) =>
