@@ -46,7 +46,7 @@ export const ItemTotalPrice = styled.span`
 `;
 
 export const RemoveItemButton = styled.button`
-  border: none;
+  border: 2px red solid;
   display: flex;
   align-items: center;
   background: none;
