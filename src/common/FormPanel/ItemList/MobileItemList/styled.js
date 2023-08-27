@@ -22,5 +22,5 @@ export const BottomFields = styled.div`
   display: grid;
   grid-template-columns: 4fr 6.25fr 3.5fr auto;
   gap: 16px;
-  max-height: 73px;
+  max-height: 72px;
 `;
