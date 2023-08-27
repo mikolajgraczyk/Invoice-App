@@ -5,15 +5,16 @@ export const StyledHomePage = styled.main`
   width: 100%;
   margin: 0 auto;
   padding-top: 78px;
+  padding-bottom: 48px;
   transform: translateX(51.5px);
 
   @media(max-width: ${({theme}) => theme.breakpoint.tabletMax}px){
     max-width: none;
-    padding: 62px 50px 0;
+    padding: 62px 50px 173px;
     transform: none;
   };
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    padding: 36px 24px 0;
+    padding: 36px 24px 105px;
   }
 `;

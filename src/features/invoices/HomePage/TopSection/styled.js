@@ -11,6 +11,10 @@ export const TitleSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media(max-width: ${({theme}) => theme.breakpoint.tabletMax}px){
+    gap: 3px;
+  };
 `;
 
 export const Title = styled.h1`
