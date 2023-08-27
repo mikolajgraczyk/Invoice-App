@@ -46,10 +46,10 @@ export const ItemTotalPrice = styled.span`
 `;
 
 export const RemoveItemButton = styled.button`
-  border: 2px red solid;
   display: flex;
   background: none;
   align-items: center;
+  border: none;
   max-height: 47px;
   align-self: flex-end;
   color: ${({ theme }) => theme.formPanel.totalPrice};

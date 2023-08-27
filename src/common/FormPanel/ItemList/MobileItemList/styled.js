@@ -15,7 +15,6 @@ export const ItemInputField = styled.div`
   display: flex;
   flex-direction: column;
   gap: 25px;
-  border: 2px blue solid;
 `;
 
 export const BottomFields = styled.div`
