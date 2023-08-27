@@ -13,5 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
     background: ${({ theme }) => theme.main.background};
     transition: 0.4s;
+    position: relative;
     }
 `;
