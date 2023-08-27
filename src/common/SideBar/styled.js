@@ -21,6 +21,7 @@ export const StyledSideBar = styled.aside`
     border-radius: 0px;
     flex-direction: row;
     position: static;
+    top: 0;
   }
 `;
 
