@@ -80,6 +80,7 @@ export const Label = styled.div`
     css`
       gap: 15px;
       border: 2px green solid;
+      max-height: 77px;
     `}
 
   ${({ itemName }) =>
