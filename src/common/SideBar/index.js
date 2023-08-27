@@ -19,7 +19,6 @@ const SideBar = ({ formPanelStatus }) => {
   const isLightTheme = useSelector(selectIsLightTheme);
 
   const dispatch = useDispatch();
-  console.log(formPanelStatus);
 
   return (
     <StyledSideBar formPanelStatus={formPanelStatus}>

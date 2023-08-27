@@ -7,7 +7,7 @@ const MobileItemList = ({ itemList, onInputChange, removeItemHandler }) => (
   <StyledMobileItemList>
     {itemList.map((item, index) => {
       return (
-        <ItemInputField>
+        <ItemInputField key={item.itemId}>
           <Label itemList itemName>
             Item Name
             <Input

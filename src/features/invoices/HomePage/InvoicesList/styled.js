@@ -6,7 +6,6 @@ export const StyledInvoicesList = styled.ul`
   list-style: none;
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
   gap: 16px;
 
   @media(max-width: ${({theme}) => theme.breakpoint.tabletMax}px){
