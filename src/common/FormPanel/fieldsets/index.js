@@ -78,8 +78,8 @@ export const Label = styled.div`
   ${({ itemList }) =>
     itemList &&
     css`
-      gap: 15px;
-      max-height: 72px;
+      gap: 9px;
+      max-height: 78px;
     `}
 
   ${({ itemName }) =>
