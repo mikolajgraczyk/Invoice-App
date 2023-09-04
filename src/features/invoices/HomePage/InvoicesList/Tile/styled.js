@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
 import { ReactComponent as TileArrow } from "./TileArrow.svg";
 
-export const StyledTile = styled.li`
+export const StyledTileLink = styled(Link)`
   background: ${({ theme }) => theme.tile.background};
   padding: 16px 24px 16px 32px;
   box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
@@ -9,6 +10,7 @@ export const StyledTile = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-decoration: none;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {

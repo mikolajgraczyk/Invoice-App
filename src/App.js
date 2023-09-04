@@ -1,16 +1,19 @@
-import { Wrapper } from "./styled";
-import SideBar from "./common/SideBar";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import { GlobalStyle } from "./GlobalStyle";
+import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
+
+import HomePage from "./features/invoices/HomePage";
+import InvoicePage from "./features/invoices/InvoicePage";
+import FormPanel from "./common/FormPanel";
+import SideBar from "./common/SideBar";
+import { Wrapper } from "./styled";
+import { lightTheme, darkTheme } from "./theme";
 import {
   selectIsLightTheme,
   selectFormPanelStatus,
 } from "./features/invoices/invoicesSlice";
-import { GlobalStyle } from "./GlobalStyle";
-import HomePage from "./features/invoices/HomePage";
-import FormPanel from "./common/FormPanel";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);
@@ -24,8 +27,15 @@ function App() {
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
       <Wrapper>
-        <SideBar formPanelStatus={formPanelStatus}/>
-        <HomePage />
+        <SideBar formPanelStatus={formPanelStatus} />
+        <HashRouter>
+          <Routes>
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/invoice/:id" element={<InvoicePage />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="*" element={<Navigate to="/home" />} />
+          </Routes>
+        </HashRouter>
         {formPanelStatus && <FormPanel />}
       </Wrapper>
     </ThemeProvider>
