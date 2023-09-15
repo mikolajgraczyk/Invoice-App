@@ -1,20 +1,27 @@
 import { useParams } from "react-router";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 import { selectInvoices } from "../invoicesSlice";
-import { StyledInvoicePage } from "./styled";
+import { ReactComponent as BackButtonArrow } from "./BackButtonArrow.svg";
+import { StyledInvoicePage, GoBackButton } from "./styled";
 
 const InvoicePage = () => {
-    const { id } = useParams();
-    
-    const invoicesState = useSelector(selectInvoices);
-    const selectedInvoice = invoicesState.find(invoice => invoice.id === id);
+  const { id } = useParams();
 
-    return(
-        <StyledInvoicePage>
-            {selectedInvoice.id}
-        </StyledInvoicePage>
-    );
+  const invoicesState = useSelector(selectInvoices);
+  const selectedInvoice = invoicesState.find((invoice) => invoice.id === id);
+
+  const navigate = useNavigate();
+
+  return (
+    <StyledInvoicePage>
+      <GoBackButton onClick={() => navigate(-1)}>
+        <BackButtonArrow />
+        <span>Go back</span>
+      </GoBackButton>
+    </StyledInvoicePage>
+  );
 };
 
 export default InvoicePage;

@@ -82,6 +82,7 @@ export const lightTheme = {
   invoiceDetailsTile: {
     background: colorNames.white,
     mainText: colorNames.vulcan,
+    backButtonHover: colorNames.shipCove,
     hash: colorNames.baliHai,
     text1: colorNames.shipCove,
     rectangleBackground: colorNames.whiteLilac,
@@ -113,7 +114,7 @@ export const lightTheme = {
     saveSendBackground: colorNames.cornflowerBlue,
     saveSendText: colorNames.white,
   },
-  deletionWindow: {
+  deleteWindow: {
     background: colorNames.white,
     mainText: colorNames.vulcan,
     text1: colorNames.baliHai,
@@ -178,6 +179,7 @@ export const darkTheme = {
   invoiceDetailsTile: {
     background: colorNames.mirage,
     mainText: colorNames.white,
+    backButtonHover: colorNames.baliHai,
     hash: colorNames.baliHai,
     text1: colorNames.selago,
     rectangleBackground: colorNames.ebonyClay,
@@ -209,7 +211,7 @@ export const darkTheme = {
     saveSendBackground: colorNames.cornflowerBlue,
     saveSendText: colorNames.white,
   },
-  deletionWindow: {
+  deleteWindow: {
     background: colorNames.mirage,
     mainText: colorNames.white,
     text1: colorNames.selago,

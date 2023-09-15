@@ -18,3 +18,23 @@ export const StyledInvoicePage = styled.main`
     padding: 33px 24px 105px;
   }
 `;
+
+export const GoBackButton = styled.button`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  gap: 23.66px;
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.invoiceDetailsTile.mainText};
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    color: ${({ theme }) => theme.invoiceDetailsTile.backButtonHover};
+  }
+`;
