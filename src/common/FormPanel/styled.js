@@ -53,3 +53,18 @@ export const Wrapper = styled.div`
     padding: 33px 16px 88px 0;
   }
 `;
+
+export const PanelTitle = styled.span`
+  color: ${({theme}) => theme.formPanel.mainText};
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  display: block;
+  margin-bottom: 46px;
+  transition: 0.3s;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-bottom: 22px;
+  }
+`;

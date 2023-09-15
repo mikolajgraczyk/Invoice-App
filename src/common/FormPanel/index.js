@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { StyledFormPanel, Wrapper } from "./styled";
+import { StyledFormPanel, Wrapper, PanelTitle } from "./styled";
 import { Backdrop } from "../Backdrop";
 import {
   selectFormPanelStatus,
@@ -30,10 +30,13 @@ const FormPanel = () => {
     }
   };
 
+  const panelTitle = formPanelStatus === "create" ? "New Invoice" : "Edit";
+
   return (
     <>
       <StyledFormPanel>
         <Wrapper>
+          <PanelTitle>{panelTitle}</PanelTitle>
           <form onSubmit={handleFormSubmit}>
             <PersonalInfoFieldset
               legend="Bill From"
