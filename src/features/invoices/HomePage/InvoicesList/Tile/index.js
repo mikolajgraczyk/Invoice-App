@@ -1,5 +1,6 @@
-import { parse, format } from "date-fns";
 import { ReactComponent as StatusCircle } from "./StatusCircle.svg";
+
+import {convertDateFormat} from "../../../convertDateFormat";
 import {
   StyledTileLink,
   LeftTileSection,
@@ -16,8 +17,8 @@ import {
 } from "./styled";
 
 const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
-  const parsedDate = parse(termDate, "yyyy-dd-MM", new Date());
-  const formattedDate = format(parsedDate, "dd MMM yyyy");
+
+  const formattedDate = convertDateFormat(termDate);
 
   return (
     <li>

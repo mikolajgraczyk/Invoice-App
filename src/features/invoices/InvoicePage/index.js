@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { selectInvoices } from "../invoicesSlice";
 import { ReactComponent as BackButtonArrow } from "./BackButtonArrow.svg";
 import { StyledInvoicePage, GoBackButton } from "./styled";
+import DetailsSection from "./DetailsSection";
 
 const InvoicePage = () => {
   const { id } = useParams();
@@ -20,6 +21,7 @@ const InvoicePage = () => {
         <BackButtonArrow />
         <span>Go back</span>
       </GoBackButton>
+      <DetailsSection selectedInvoice={selectedInvoice}/>
     </StyledInvoicePage>
   );
 };
