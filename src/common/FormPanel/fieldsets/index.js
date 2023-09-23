@@ -107,4 +107,8 @@ export const Input = styled.input`
   &:focus {
     outline: 1px ${({ theme }) => theme.formPanel.inputBorderFocus} solid;
   }
+
+  &:invalid {
+    outline: 1px red solid;
+  }
 `;

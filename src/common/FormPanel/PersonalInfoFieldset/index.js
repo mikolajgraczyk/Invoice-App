@@ -22,6 +22,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
           <LongLabel>
             Client’s Name
             <Input
+              pattern="[a-zA-Z0-9]+.*"
               type="text"
               name="clientName"
               value={formData.clientName}
@@ -31,7 +32,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
           <LongLabel>
             Client’s Email
             <Input
-              type="text"
+              type="email"
               name="clientEmail"
               value={formData.clientEmail}
               onChange={onInputChange}
@@ -42,6 +43,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
       <LongLabel>
         Street Address
         <Input
+          pattern="[a-zA-Z0-9]+.*"
           type="text"
           name="streetAdress"
           value={formData.streetAdress}
@@ -51,6 +53,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
       <Label>
         City
         <Input
+          pattern="[a-zA-Z]+.*"
           type="text"
           name="city"
           value={formData.city}
@@ -60,7 +63,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
       <Label>
         Post Code
         <Input
-          type="text"
+          type="number"
           name="postalCode"
           value={formData.postalCode}
           onChange={onInputChange}
@@ -69,6 +72,7 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
       <Label countryLabel>
         Country
         <Input
+          pattern="[a-zA-Z]+.*"
           type="text"
           name="country"
           value={formData.country}

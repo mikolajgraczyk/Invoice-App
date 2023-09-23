@@ -86,6 +86,7 @@ const DetailsFieldset = ({ formData, setFormData, formPanelStatus }) => {
       <LongLabel location="details">
         Project Description
         <Input
+          pattern="[a-zA-Z]+.*"
           name="projectDescription"
           value={formData.projectDescription}
           onChange={onInputChange}
