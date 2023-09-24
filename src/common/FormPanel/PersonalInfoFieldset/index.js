@@ -14,73 +14,117 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
     }));
   };
 
-  return (
-    <StyledFieldset>
-      <FieldsetLegend>{legend}</FieldsetLegend>
-      {legend === "Bill To" && (
-        <>
-          <LongLabel>
-            Client’s Name
-            <Input
-              pattern="[a-zA-Z0-9]+.*"
-              type="text"
-              name="clientName"
-              value={formData.clientName}
-              onChange={onInputChange}
-            />
-          </LongLabel>
-          <LongLabel>
-            Client’s Email
-            <Input
-              type="email"
-              name="clientEmail"
-              value={formData.clientEmail}
-              onChange={onInputChange}
-            />
-          </LongLabel>
-        </>
-      )}
-      <LongLabel>
-        Street Address
-        <Input
-          pattern="[a-zA-Z0-9]+.*"
-          type="text"
-          name="streetAdress"
-          value={formData.streetAdress}
-          onChange={onInputChange}
-        />
-      </LongLabel>
-      <Label>
-        City
-        <Input
-          pattern="[a-zA-Z]+.*"
-          type="text"
-          name="city"
-          value={formData.city}
-          onChange={onInputChange}
-        />
-      </Label>
-      <Label>
-        Post Code
-        <Input
-          type="number"
-          name="postalCode"
-          value={formData.postalCode}
-          onChange={onInputChange}
-        />
-      </Label>
-      <Label countryLabel>
-        Country
-        <Input
-          pattern="[a-zA-Z]+.*"
-          type="text"
-          name="country"
-          value={formData.country}
-          onChange={onInputChange}
-        />
-      </Label>
-    </StyledFieldset>
-  );
+  if (legend === "Bill To") {
+    return (
+      <StyledFieldset>
+        <FieldsetLegend>{legend}</FieldsetLegend>
+        <LongLabel>
+          Client’s Name
+          <Input
+            pattern="[a-zA-Z0-9]+.*"
+            type="text"
+            name="clientName"
+            value={formData.clientName}
+            onChange={onInputChange}
+          />
+        </LongLabel>
+        <LongLabel>
+          Client’s Email
+          <Input
+            type="email"
+            name="clientEmail"
+            value={formData.clientEmail}
+            onChange={onInputChange}
+          />
+        </LongLabel>
+        <LongLabel>
+          Street Address
+          <Input
+            pattern="[a-zA-Z0-9]+.*"
+            type="text"
+            name="streetAdress"
+            value={formData.streetAdress}
+            onChange={onInputChange}
+          />
+        </LongLabel>
+        <Label>
+          City
+          <Input
+            pattern="[a-zA-Z]+.*"
+            type="text"
+            name="city"
+            value={formData.city}
+            onChange={onInputChange}
+          />
+        </Label>
+        <Label>
+          Post Code
+          <Input
+            type="text"
+            name="postalCode"
+            value={formData.postalCode}
+            onChange={onInputChange}
+          />
+        </Label>
+        <Label countryLabel>
+          Country
+          <Input
+            pattern="[a-zA-Z]+.*"
+            type="text"
+            name="country"
+            value={formData.country}
+            onChange={onInputChange}
+          />
+        </Label>
+      </StyledFieldset>
+    );
+  }
+  if (legend === "Bill From") {
+    return (
+      <StyledFieldset>
+        <FieldsetLegend>{legend}</FieldsetLegend>
+        <LongLabel>
+          Street Address
+          <Input
+            pattern="[a-zA-Z0-9]+.*"
+            type="text"
+            name="streetAdress"
+            value={formData.streetAdress}
+            onChange={onInputChange}
+          />
+        </LongLabel>
+        <Label>
+          City
+          <Input
+            pattern="[a-zA-Z]+.*"
+            type="text"
+            name="city"
+            value={formData.city}
+            onChange={onInputChange}
+          />
+        </Label>
+        <Label>
+          Post Code
+          <Input
+            type="text"
+            name="postalCode"
+            value={formData.postalCode}
+            onChange={onInputChange}
+          />
+        </Label>
+        <Label countryLabel>
+          Country
+          <Input
+            pattern="[a-zA-Z]+.*"
+            type="text"
+            name="country"
+            value={formData.country}
+            onChange={onInputChange}
+          />
+        </Label>
+      </StyledFieldset>
+    );
+  }
 };
 
 export default PersonalInfoFieldset;
