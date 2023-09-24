@@ -57,9 +57,14 @@ export const RemoveItemButton = styled.button`
   height: 100%;
   padding: 0;
 
-  &:hover {
-    cursor: pointer;
-  }
+  ${({ unavailable }) =>
+    unavailable
+      ? css`
+          cursor: not-allowed;
+        `
+      : css`
+          cursor: pointer;
+        `}
 `;
 
 export const AddItemButton = styled.button`

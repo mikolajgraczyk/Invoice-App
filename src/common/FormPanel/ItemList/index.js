@@ -9,27 +9,32 @@ const ItemList = ({ itemList, setFormData }) => {
 
     setFormData((prevData) => ({
       ...prevData,
-      itemList: itemList.map((item, itemIndex) =>
-        itemIndex === index
-          ? {
-              ...item,
-              [name]: value,
-            }
-          : item
-      ),
+      itemList: itemList.map((item, itemIndex) => {
+        if (itemIndex === index) {
+          return {
+            ...item,
+            [name]: value,
+          };
+        }
+        return item;
+      }),
     }));
   };
 
   const removeItemHandler = (event, index) => {
     event.preventDefault();
 
-    setFormData((prevData) => ({
-      ...prevData,
-      itemList: [
-        ...prevData.itemList.slice(0, index),
-        ...prevData.itemList.slice(index + 1),
-      ],
-    }));
+    if (itemList.length > 1) {
+      setFormData((prevData) => ({
+        ...prevData,
+        itemList: [
+          ...prevData.itemList.slice(0, index),
+          ...prevData.itemList.slice(index + 1),
+        ],
+      }));
+      return;
+    }
+    return;
   };
 
   const addItemHandler = (event) => {

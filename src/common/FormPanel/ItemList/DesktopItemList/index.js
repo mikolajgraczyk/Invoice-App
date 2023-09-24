@@ -30,6 +30,7 @@ const DesktopItemList = ({ itemList, onInputChange, removeItemHandler }) => (
           />
           <ItemTotalPrice>{item.price * item.quantity}</ItemTotalPrice>
           <RemoveItemButton
+            unavailable={itemList.length === 1}
             onClick={(event) => removeItemHandler(event, index)}
           >
             <TrashIcon />
