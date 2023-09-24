@@ -13,8 +13,8 @@ const ItemList = () => {
   const onInputChange = (index, target) => {
     const { name, value } = target;
 
-    setFormData((prevData) => {
-      const updatedItemList = formData.itemList.map((item, itemIndex) => {
+    setFormData((prevState) => {
+      const updatedItemList = prevState.itemList.map((item, itemIndex) => {
         if (itemIndex === index) {
           const updatedItem = {
             ...item,
@@ -25,8 +25,9 @@ const ItemList = () => {
         }
         return item;
       });
+
       return {
-        ...prevData,
+        ...prevState,
         itemList: updatedItemList,
       };
     });
@@ -35,31 +36,29 @@ const ItemList = () => {
   const removeItemHandler = (event, index) => {
     event.preventDefault();
 
-    if (formData.itemList.length > 1) {
-      setFormData((prevData) => {
-        if (formData.itemList.length > 1) {
-          return {
-            ...prevData,
-            itemList: [
-              ...prevData.itemList.slice(0, index),
-              ...prevData.itemList.slice(index + 1),
-            ],
-          };
-        }
+    setFormData((prevData) => {
+      if (formData.itemList.length > 1) {
         return {
           ...prevData,
           itemList: [
-            {
-              itemId: nanoid(),
-              itemName: "",
-              quantity: "",
-              price: "",
-              totalItemPrice: 0,
-            },
+            ...prevData.itemList.slice(0, index),
+            ...prevData.itemList.slice(index + 1),
           ],
         };
-      });
-    }
+      }
+      return {
+        ...prevData,
+        itemList: [
+          {
+            itemId: nanoid(),
+            itemName: "",
+            quantity: "",
+            price: "",
+            totalItemPrice: 0,
+          },
+        ],
+      };
+    });
   };
 
   const addItemHandler = (event) => {
