@@ -40,6 +40,10 @@ export const LongLabel = styled.label`
   grid-column-end: 4;
   transition: 0.4s;
 
+  &:invalid{
+    background: red;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-column-end: 3;
   }
@@ -55,7 +59,7 @@ export const LongLabel = styled.label`
     `}
 `;
 
-export const Label = styled.div`
+export const Label = styled.label`
   display: flex;
   flex-direction: column;
   gap: 9px;

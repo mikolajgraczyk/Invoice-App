@@ -6,22 +6,22 @@ const formattedTodaysDate = format(todaysDate, "yyyy-MM-dd");
 export const initialFormState = {
   status: "pending",
   from: {
-    streetAdress: "",
-    city: "",
-    postalCode: "",
-    country: "",
+    streetAdress: "Toruńska 47",
+    city: "Gniewkowo",
+    postalCode: "88-140",
+    country: "Poland",
   },
   to: {
     clientName: "",
-    clientEmail: "",
-    streetAdress: "",
-    city: "",
-    postalCode: "",
-    country: "",
+    clientEmail: "mikolajgraczyk123@gmail.com",
+    streetAdress: "Sobieskiego 18",
+    city: "Gniekwowo",
+    postalCode: "88-140",
+    country: "Poland",
     date: formattedTodaysDate,
     paymentTerms: 30,
     paymentTermsDate: "",
-    projectDescription: "",
+    projectDescription: "lala",
   },
   itemList: [
     {

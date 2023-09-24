@@ -1,7 +1,12 @@
+import { useContext } from "react";
+import { formContext } from "../index";
 import { StyledFieldset, LongLabel, Label, Input } from "../fieldsets/index";
 import { FieldsetLegend } from "./styled";
 
-const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
+const PersonalInfoFieldset = ({ legend }) => {
+  const { formData, setFormData, isFormValid } =
+    useContext(formContext);
+
   const onInputChange = ({ target }) => {
     const { name, value } = target;
 
@@ -21,58 +26,64 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
         <LongLabel>
           Client’s Name
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z0-9]+.*"
             type="text"
             name="clientName"
-            value={formData.clientName}
+            value={formData.to.clientName}
             onChange={onInputChange}
           />
         </LongLabel>
         <LongLabel>
           Client’s Email
           <Input
+            required={!isFormValid}
             type="email"
             name="clientEmail"
-            value={formData.clientEmail}
+            value={formData.to.clientEmail}
             onChange={onInputChange}
           />
         </LongLabel>
         <LongLabel>
           Street Address
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z0-9]+.*"
             type="text"
             name="streetAdress"
-            value={formData.streetAdress}
+            value={formData.to.streetAdress}
             onChange={onInputChange}
           />
         </LongLabel>
         <Label>
           City
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z]+.*"
             type="text"
             name="city"
-            value={formData.city}
+            value={formData.to.city}
             onChange={onInputChange}
           />
         </Label>
         <Label>
           Post Code
           <Input
+            required={!isFormValid}
             type="text"
             name="postalCode"
-            value={formData.postalCode}
+            value={formData.to.postalCode}
             onChange={onInputChange}
           />
         </Label>
         <Label countryLabel>
           Country
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z]+.*"
             type="text"
             name="country"
-            value={formData.country}
+            value={formData.to.country}
             onChange={onInputChange}
           />
         </Label>
@@ -86,39 +97,43 @@ const PersonalInfoFieldset = ({ legend, formData, setFormData }) => {
         <LongLabel>
           Street Address
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z0-9]+.*"
             type="text"
             name="streetAdress"
-            value={formData.streetAdress}
+            value={formData.from.streetAdress}
             onChange={onInputChange}
           />
         </LongLabel>
         <Label>
           City
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z]+.*"
             type="text"
             name="city"
-            value={formData.city}
+            value={formData.from.city}
             onChange={onInputChange}
           />
         </Label>
         <Label>
           Post Code
           <Input
+            required={!isFormValid}
             type="text"
             name="postalCode"
-            value={formData.postalCode}
+            value={formData.from.postalCode}
             onChange={onInputChange}
           />
         </Label>
         <Label countryLabel>
           Country
           <Input
+            required={!isFormValid}
             pattern="[a-zA-Z]+.*"
             type="text"
             name="country"
-            value={formData.country}
+            value={formData.from.country}
             onChange={onInputChange}
           />
         </Label>

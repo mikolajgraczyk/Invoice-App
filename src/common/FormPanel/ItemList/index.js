@@ -1,15 +1,21 @@
+import { useContext, createContext } from "react";
+import { formContext } from "..";
 import { nanoid } from "@reduxjs/toolkit";
 import { StyledItemList, Title, AddItemButton } from "./styled";
 import DesktopItemList from "./DesktopItemList";
 import MobileItemList from "./MobileItemList";
 
-const ItemList = ({ itemList, setFormData }) => {
+export const itemListContext = createContext();
+
+const ItemList = () => {
+  const { formData, setFormData, isFormValid } = useContext(formContext);
+
   const onInputChange = (index, target) => {
     const { name, value } = target;
 
     setFormData((prevData) => ({
       ...prevData,
-      itemList: itemList.map((item, itemIndex) => {
+      itemList: formData.itemList.map((item, itemIndex) => {
         if (itemIndex === index) {
           return {
             ...item,
@@ -24,7 +30,7 @@ const ItemList = ({ itemList, setFormData }) => {
   const removeItemHandler = (event, index) => {
     event.preventDefault();
 
-    if (itemList.length > 1) {
+    if (formData.itemList.length > 1) {
       setFormData((prevData) => ({
         ...prevData,
         itemList: [
@@ -34,7 +40,18 @@ const ItemList = ({ itemList, setFormData }) => {
       }));
       return;
     }
-    return;
+    setFormData((prevData) => ({
+      ...prevData,
+      itemList: [
+        {
+          itemId: nanoid(),
+          itemName: "",
+          quantity: "",
+          price: "",
+          totalItemPrice: "",
+        },
+      ],
+    }));
   };
 
   const addItemHandler = (event) => {
@@ -58,16 +75,12 @@ const ItemList = ({ itemList, setFormData }) => {
   return (
     <StyledItemList>
       <Title>Item List</Title>
-      <DesktopItemList
-        itemList={itemList}
-        onInputChange={onInputChange}
-        removeItemHandler={removeItemHandler}
-      />
-      <MobileItemList
-        itemList={itemList}
-        onInputChange={onInputChange}
-        removeItemHandler={removeItemHandler}
-      />
+      <itemListContext.Provider
+        value={{ formData, onInputChange, removeItemHandler }}
+      >
+        <DesktopItemList isFormValid={isFormValid} />
+        <MobileItemList isFormValid={isFormValid} />
+      </itemListContext.Provider>
       <AddItemButton onClick={(event) => addItemHandler(event)}>
         + Add New Item
       </AddItemButton>

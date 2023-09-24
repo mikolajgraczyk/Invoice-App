@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { formContext } from "..";
 import { StyledFieldset, Label, LongLabel, Input } from "../fieldsets/index";
 import { Calendar, PaymentTermsButton, TermSelector } from "./styled";
 import Option from "./TermSelectorOption";
@@ -7,9 +8,12 @@ import { generateId } from "./generateId";
 import { ReactComponent as ArrowDown } from "./ArrowDown.svg";
 import { ReactComponent as ArrowUp } from "./ArrowUp.svg";
 
-const DetailsFieldset = ({ formData, setFormData, formPanelStatus }) => {
+const DetailsFieldset = () => {
   const [isPaymentTermVisible, setIsPaymentTermVisible] = useState(false);
-  const paymentTerm = formData.paymentTerms;
+
+  const { formData, setFormData, formPanelStatus, isFormValid } =
+    useContext(formContext);
+  const paymentTerm = formData.to.paymentTerms;
 
   const PaymentTermsButtonHandler = (event) => {
     event.preventDefault();
@@ -23,7 +27,7 @@ const DetailsFieldset = ({ formData, setFormData, formPanelStatus }) => {
         id: generateId(),
         to: {
           ...prevState.to,
-          paymentTermsDate: calculateTermDate(formData),
+          paymentTermsDate: calculateTermDate(formData.to),
         },
       }));
     } else {
@@ -50,7 +54,7 @@ const DetailsFieldset = ({ formData, setFormData, formPanelStatus }) => {
         <Calendar
           type="date"
           name="date"
-          value={formData.date}
+          value={formData.to.date}
           onChange={onInputChange}
         />
       </Label>
@@ -86,9 +90,10 @@ const DetailsFieldset = ({ formData, setFormData, formPanelStatus }) => {
       <LongLabel location="details">
         Project Description
         <Input
+          required={!isFormValid}
           pattern="[a-zA-Z]+.*"
           name="projectDescription"
-          value={formData.projectDescription}
+          value={formData.to.projectDescription}
           onChange={onInputChange}
         />
       </LongLabel>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { StyledFormPanel, Wrapper, PanelTitle } from "./styled";
 import { Backdrop } from "../Backdrop";
@@ -11,15 +11,25 @@ import PersonalInfoFieldset from "./PersonalInfoFieldset";
 import DetailsFieldset from "./DetailsFieldset";
 import ItemList from "./ItemList";
 import { initialFormState } from "./initialFormState";
+import { formValidation } from "./formValidation";
+
+export const formContext = createContext();
 
 const FormPanel = () => {
   const [formData, setFormData] = useState(initialFormState);
+  const [isFormValid, setIsFormValid] = useState(true);
 
   const dispatch = useDispatch();
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
+    const isFormFilled = formValidation(formData);
+    if (!isFormFilled) {
+      setIsFormValid(false);
+      return;
+    }
 
     dispatch(hideFormPanel());
 
@@ -28,6 +38,8 @@ const FormPanel = () => {
     } else {
       console.log("edycja");
     }
+
+    return;
   };
 
   const panelTitle = formPanelStatus === "create" ? "New Invoice" : "Edit";
@@ -38,22 +50,14 @@ const FormPanel = () => {
         <Wrapper>
           <PanelTitle>{panelTitle}</PanelTitle>
           <form onSubmit={handleFormSubmit}>
-            <PersonalInfoFieldset
-              legend="Bill From"
-              formData={formData.from}
-              setFormData={setFormData}
-            />
-            <PersonalInfoFieldset
-              legend="Bill To"
-              formData={formData.to}
-              setFormData={setFormData}
-            />
-            <DetailsFieldset
-              formData={formData.to}
-              setFormData={setFormData}
-              formPanelStatus={formPanelStatus}
-            />
-            <ItemList itemList={formData.itemList} setFormData={setFormData} />
+            <formContext.Provider
+              value={{ formData, setFormData, isFormValid, formPanelStatus }}
+            >
+              <PersonalInfoFieldset legend="Bill From" />
+              <PersonalInfoFieldset legend="Bill To" />
+              <DetailsFieldset />
+              <ItemList />
+            </formContext.Provider>
 
             <button type="submit">TEST SUBMIT</button>
           </form>

@@ -39,13 +39,14 @@ export const Calendar = styled.input`
   border: none;
   background: ${({ theme }) => theme.formPanel.inputBackground};
   border-radius: 4px;
-  padding: 18px 16px 15px 20px;
+  padding: 16px;
   width: 100%;
   color: ${({ theme }) => theme.formPanel.inputText};
   font-size: 15px;
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  display: flex;
   transition: 0.4s;
 
   &:focus {

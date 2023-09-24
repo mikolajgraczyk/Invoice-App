@@ -56,15 +56,7 @@ export const RemoveItemButton = styled.button`
   width: 100%;
   height: 100%;
   padding: 0;
-
-  ${({ unavailable }) =>
-    unavailable
-      ? css`
-          cursor: not-allowed;
-        `
-      : css`
-          cursor: pointer;
-        `}
+  cursor: pointer;
 `;
 
 export const AddItemButton = styled.button`
