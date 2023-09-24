@@ -17,6 +17,7 @@ const MobileItemList = ({ isFormValid }) => {
             <Label itemList itemName>
               Item Name
               <Input
+                required={!isFormValid}
                 name="itemName"
                 value={item.itemName}
                 onChange={({ target }) => onInputChange(index, target)}
@@ -26,7 +27,9 @@ const MobileItemList = ({ isFormValid }) => {
               <Label itemList>
                 Qty.
                 <Input
+                  required={!isFormValid}
                   name="quantity"
+                  type="number"
                   value={item.quantity}
                   onChange={({ target }) => onInputChange(index, target)}
                 />
@@ -34,7 +37,9 @@ const MobileItemList = ({ isFormValid }) => {
               <Label itemList>
                 Price
                 <Input
+                  required={!isFormValid}
                   name="price"
+                  type="number"
                   value={item.price}
                   onChange={({ target }) => onInputChange(index, target)}
                 />

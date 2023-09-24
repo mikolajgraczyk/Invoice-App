@@ -13,45 +13,53 @@ const ItemList = () => {
   const onInputChange = (index, target) => {
     const { name, value } = target;
 
-    setFormData((prevData) => ({
-      ...prevData,
-      itemList: formData.itemList.map((item, itemIndex) => {
+    setFormData((prevData) => {
+      const updatedItemList = formData.itemList.map((item, itemIndex) => {
         if (itemIndex === index) {
-          return {
+          const updatedItem = {
             ...item,
             [name]: value,
           };
+          updatedItem.totalItemPrice = updatedItem.quantity * updatedItem.price;
+          return updatedItem;
         }
         return item;
-      }),
-    }));
+      });
+      return {
+        ...prevData,
+        itemList: updatedItemList,
+      };
+    });
   };
 
   const removeItemHandler = (event, index) => {
     event.preventDefault();
 
     if (formData.itemList.length > 1) {
-      setFormData((prevData) => ({
-        ...prevData,
-        itemList: [
-          ...prevData.itemList.slice(0, index),
-          ...prevData.itemList.slice(index + 1),
-        ],
-      }));
-      return;
+      setFormData((prevData) => {
+        if (formData.itemList.length > 1) {
+          return {
+            ...prevData,
+            itemList: [
+              ...prevData.itemList.slice(0, index),
+              ...prevData.itemList.slice(index + 1),
+            ],
+          };
+        }
+        return {
+          ...prevData,
+          itemList: [
+            {
+              itemId: nanoid(),
+              itemName: "",
+              quantity: "",
+              price: "",
+              totalItemPrice: 0,
+            },
+          ],
+        };
+      });
     }
-    setFormData((prevData) => ({
-      ...prevData,
-      itemList: [
-        {
-          itemId: nanoid(),
-          itemName: "",
-          quantity: "",
-          price: "",
-          totalItemPrice: "",
-        },
-      ],
-    }));
   };
 
   const addItemHandler = (event) => {
@@ -66,7 +74,7 @@ const ItemList = () => {
           itemName: "",
           quantity: "",
           price: "",
-          totalItemPrice: "",
+          totalItemPrice: 0,
         },
       ],
     }));
