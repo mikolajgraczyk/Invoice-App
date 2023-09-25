@@ -14,21 +14,21 @@ const ItemList = () => {
     const { name, value } = target;
 
     setFormData((prevState) => {
-      const updatedItemList = prevState.itemList.map((item, itemIndex) => {
+      const newItemList = prevState.itemList.map((item, itemIndex) => {
         if (itemIndex === index) {
-          const updatedItem = {
+          const newItem = {
             ...item,
             [name]: value,
           };
-          updatedItem.totalItemPrice = updatedItem.quantity * updatedItem.price;
-          return updatedItem;
+          newItem.totalItemPrice = newItem.price * newItem.quantity;
+          return newItem;
         }
         return item;
       });
 
       return {
         ...prevState,
-        itemList: updatedItemList,
+        itemList: newItemList,
       };
     });
   };
@@ -37,7 +37,7 @@ const ItemList = () => {
     event.preventDefault();
 
     setFormData((prevData) => {
-      if (formData.itemList.length > 1) {
+      if (prevData.itemList.length > 1) {
         return {
           ...prevData,
           itemList: [

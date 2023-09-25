@@ -6,7 +6,7 @@ const InfoElement = ({ title, info, containsId }) => {
       <Title>{title}</Title>
       <div>
         {containsId && <Hash>#</Hash>}
-        <Info>{info}</Info>
+        <Info>{info ? info : "draft"}</Info>
       </div>
     </StyledInfoElement>
   );

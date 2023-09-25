@@ -12,7 +12,7 @@ const DetailsSection = ({ selectedInvoice }) => {
           info={selectedInvoice.id}
           containsId={true}
         />
-        <FullAdressElement clientInfo={selectedInvoice.from} />
+        <FullAdressElement adressInfo={selectedInvoice.from} />
       </TopDetails>
       <BottomDetails>
         <InfoElement
@@ -25,7 +25,7 @@ const DetailsSection = ({ selectedInvoice }) => {
           title={"Payment Due"}
           info={convertDateFormat(selectedInvoice.to.paymentTermsDate)}
         />
-        <FullAdressElement clientInfo={selectedInvoice.to} />
+        <FullAdressElement adressInfo={selectedInvoice.to} />
       </BottomDetails>
     </StyledDetailsSection>
   );

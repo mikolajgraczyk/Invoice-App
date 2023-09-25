@@ -8,6 +8,7 @@ export const StyledFormPanel = styled.div`
   position: fixed;
   z-index: 4;
   display: flex;
+  flex-direction: column;
   border-radius: 0px 20px 20px 0px;
   transition: 0.4s;
 

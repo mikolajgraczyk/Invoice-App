@@ -32,5 +32,5 @@ export const initialFormState = {
       totalItemPrice: 0,
     },
   ],
-  totalPrice: 1813.95,
+  totalPrice: 0,
 };

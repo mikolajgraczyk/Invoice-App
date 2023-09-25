@@ -1,12 +1,19 @@
 import { StyledFullAdressElement } from "./styled";
 
-const FullAdressElement = ({ clientInfo }) => {
+const FullAdressElement = ({ adressInfo }) => {
+  const isEmptyString = (string) => {
+    if (string === "") {
+      return "DRAFT";
+    }
+    return string;
+  };
+
   return (
     <StyledFullAdressElement>
-      <span>{clientInfo.streetAdress}</span>
-      <span>{clientInfo.city}</span>
-      <span>{clientInfo.postalCode}</span>
-      <span>{clientInfo.country}</span>
+      <span>{isEmptyString(adressInfo.streetAdress)}</span>
+      <span>{isEmptyString(adressInfo.city)}</span>
+      <span>{isEmptyString(adressInfo.postalCode)}</span>
+      <span>{isEmptyString(adressInfo.country)}</span>
     </StyledFullAdressElement>
   );
 };
