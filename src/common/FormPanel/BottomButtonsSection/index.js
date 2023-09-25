@@ -1,13 +1,18 @@
 import { useContext } from "react";
-import { formContext } from "..";
 import { useDispatch } from "react-redux";
+
+import { formContext } from "..";
 import {
   addNewInvoice,
   hideFormPanel,
 } from "../../../features/invoices/invoicesSlice";
-
 import { formValidation } from "../formValidation";
-import { StyledBottomButtonsSection } from "./styled";
+import {
+  StyledBottomButtonsSection,
+  DiscardButton,
+  DraftButton,
+  SaveButton,
+} from "./styled";
 
 const BottomButtonsSection = () => {
   const dispatch = useDispatch();
@@ -24,14 +29,8 @@ const BottomButtonsSection = () => {
     dispatch(hideFormPanel());
   };
 
-  const discard = (event) => {
-    event.preventDefault();
-    dispatch(hideFormPanel());
-  };
-
   const submit = (event) => {
     event.preventDefault();
-
     const isFormFilled = formValidation(formData);
     if (!isFormFilled) {
       setIsFormValid(false);
@@ -49,11 +48,18 @@ const BottomButtonsSection = () => {
     return;
   };
 
+  const discard = (event) => {
+    event.preventDefault();
+    dispatch(hideFormPanel());
+  };
+
   return (
     <StyledBottomButtonsSection>
-      <button onClick={(event) => discard(event)}>Discard</button>
-      <button onClick={(event) => saveAsDraft(event)}>Save as Draft</button>
-      <button onClick={(event) => submit(event)}>Save & Send</button>
+      <DiscardButton onClick={(event) => discard(event)}>Discard</DiscardButton>
+      <DraftButton onClick={(event) => saveAsDraft(event)}>
+        Save as Draft
+      </DraftButton>
+      <SaveButton onClick={(event) => submit(event)}>Save & Send</SaveButton>
     </StyledBottomButtonsSection>
   );
 };
