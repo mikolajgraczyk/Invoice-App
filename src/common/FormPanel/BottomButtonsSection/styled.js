@@ -1,13 +1,25 @@
 import styled from "styled-components";
 
 export const StyledBottomButtonsSection = styled.div`
-  padding: 31px 24px 31px 0;
+  padding: 31px 56px;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(4, 1fr);
+  position: absolute;
+  bottom: 0;
+  width: 616px;
+  left: 103px;
+  background: ${({ theme }) => theme.formPanel.background};
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -18px 24px -22px;
+  transition: 0.3s;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    left: 0;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     padding: 21px 16px 22px 0;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
     gap: 7px;
   }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledFormPanel = styled.div`
   max-width: 719px;
-  padding: 0 32px 0 159px;
+  padding: 0 32px 119px 159px;
   background: ${({ theme }) => theme.formPanel.background};
   height: 100%;
   position: fixed;
@@ -14,7 +14,7 @@ export const StyledFormPanel = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     max-width: 616px;
-    padding: 0 32px 0 56px;
+    padding: 0 32px 103px 56px;
     height: calc(100% - 80px);
     bottom: 0;
   }
@@ -23,7 +23,7 @@ export const StyledFormPanel = styled.div`
     max-width: none;
     width: 100%;
     border-radius: 0;
-    padding: 0 8px 0 24px;
+    padding: 0 8px 91px 24px;
   }
 `;
 
