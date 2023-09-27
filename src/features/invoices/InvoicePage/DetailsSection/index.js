@@ -1,6 +1,7 @@
 import { convertDateFormat } from "../../convertDateFormat";
 import InfoElement from "./InfoElement";
 import FullAdressElement from "./FullAdressElement";
+import ItemsDetails from "./ItemsDetails";
 import { StyledDetailsSection, TopDetails, BottomDetails } from "./styled";
 
 const DetailsSection = ({ selectedInvoice }) => {
@@ -27,6 +28,10 @@ const DetailsSection = ({ selectedInvoice }) => {
         />
         <FullAdressElement adressInfo={selectedInvoice.to} />
       </BottomDetails>
+      <ItemsDetails
+        itemList={selectedInvoice.itemList}
+        totalPrice={selectedInvoice.totalPrice}
+      />
     </StyledDetailsSection>
   );
 };
