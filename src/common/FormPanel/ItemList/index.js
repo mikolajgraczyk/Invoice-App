@@ -1,4 +1,4 @@
-import { useContext, createContext } from "react";
+import { useContext, createContext, useState } from "react";
 import { formContext } from "..";
 import { nanoid } from "@reduxjs/toolkit";
 import { StyledItemList, Title, AddItemButton } from "./styled";
@@ -26,9 +26,15 @@ const ItemList = () => {
         return item;
       });
 
+      let totalPrice = 0;
+      newItemList.forEach((item) => {
+        totalPrice = totalPrice + item.totalItemPrice;
+      });
+
       return {
         ...prevState,
         itemList: newItemList,
+        totalPrice,
       };
     });
   };
