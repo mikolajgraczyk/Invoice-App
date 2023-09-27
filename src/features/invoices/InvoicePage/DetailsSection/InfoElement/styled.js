@@ -23,6 +23,7 @@ export const Title = styled.span`
   font-weight: 500;
   line-height: 15px;
   letter-spacing: -0.1px;
+  transition: 0.3s;
 `;
 
 export const Info = styled.span`
@@ -31,6 +32,7 @@ export const Info = styled.span`
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.25px;
+  transition: 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     line-height: 15px;
@@ -43,6 +45,7 @@ export const Hash = styled.span`
   font-weight: 700;
   line-height: 24px;
   letter-spacing: -0.25px;
+  transition: 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     line-height: 15px;

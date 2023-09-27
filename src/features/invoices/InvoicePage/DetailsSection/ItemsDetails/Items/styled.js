@@ -25,6 +25,7 @@ export const Name = styled.span`
   font-size: 13px;
   line-height: 18px;
   letter-spacing: -0.1px;
+  transition: 0.3s;
 `;
 
 export const NameTotalPriceSpan = styled.span`
@@ -33,6 +34,7 @@ export const NameTotalPriceSpan = styled.span`
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  transition: 0.3s;
 `;
 
 export const QuantityPriceSpan = styled.span`
@@ -41,6 +43,7 @@ export const QuantityPriceSpan = styled.span`
   font-weight: 700;
   line-height: 15px;
   letter-spacing: -0.25px;
+  transition: 0.3s;
 `;
 
 export const StyledMobileItems = styled.div`

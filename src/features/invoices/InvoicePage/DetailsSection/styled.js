@@ -6,6 +6,7 @@ export const StyledDetailsSection = styled.div`
   border-radius: 8px;
   box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
   margin-top: 24px;
+  transition: 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     padding: 34px 32px 32px;

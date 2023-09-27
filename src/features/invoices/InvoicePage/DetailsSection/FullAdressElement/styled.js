@@ -8,4 +8,5 @@ export const StyledFullAdressElement = styled.div`
   font-weight: 500;
   line-height: 18px;
   letter-spacing: -0.1px;
+  transition: 0.3s;
 `;
