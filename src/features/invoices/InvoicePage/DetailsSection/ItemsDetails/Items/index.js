@@ -5,6 +5,8 @@ import {
   NameTotalPriceSpan,
   QuantityPriceSpan,
   StyledMobileItems,
+  Item,
+  Wrapper,
 } from "./styled";
 
 const Items = ({ itemList }) => {
@@ -24,7 +26,18 @@ const Items = ({ itemList }) => {
           </Fragment>
         ))}
       </StyledItems>
-      <StyledMobileItems></StyledMobileItems>
+
+      <StyledMobileItems>
+        {itemList.map((item) => (
+          <Item key={item.itemId}>
+            <Wrapper>
+              <NameTotalPriceSpan>{item.itemName}</NameTotalPriceSpan>
+              <QuantityPriceSpan>{`${item.quantity} x £${item.price}`}</QuantityPriceSpan>
+            </Wrapper>
+            <NameTotalPriceSpan>£ {item.totalItemPrice}</NameTotalPriceSpan>
+          </Item>
+        ))}
+      </StyledMobileItems>
     </>
   );
 };

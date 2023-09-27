@@ -48,6 +48,20 @@ export const StyledMobileItems = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     padding: 25px 24px 23px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
+`;
+
+export const Item = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;
