@@ -34,7 +34,7 @@ const ItemList = () => {
       return {
         ...prevState,
         itemList: newItemList,
-        totalPrice,
+        totalPrice: totalPrice.toFixed(2),
       };
     });
   };
