@@ -6,16 +6,17 @@ export const StyledInvoicePage = styled.main`
   margin: 0 auto;
   padding-top: 65px;
   padding-bottom: 48px;
+  position: relative;
   transform: translateX(51.5px);
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     max-width: none;
-    padding: 49px 40px 173px;
+    padding: 49px 40px 135px;
     transform: none;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    padding: 33px 24px 105px;
+    padding: 33px 24px 147px;
   }
 `;
 
@@ -36,5 +37,20 @@ export const GoBackButton = styled.button`
   &:hover {
     cursor: pointer;
     color: ${({ theme }) => theme.invoiceDetailsTile.backButtonHover};
+  }
+`;
+
+export const MobileButtonsSection = styled.div`
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 21px 24px 22px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.invoiceDetailsTile.background};
+  transition: 0.3s;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: block;
   }
 `;

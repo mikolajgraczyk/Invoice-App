@@ -3,6 +3,11 @@ import styled, { css } from "styled-components";
 export const StyledControlButtons = styled.div`
   display: flex;
   gap: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    justify-content: center;
+    gap: 2.5%;
+  }
 `;
 
 export const ControlButton = styled.button`
