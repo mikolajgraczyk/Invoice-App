@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { selectInvoices } from "../invoicesSlice";
 import { ReactComponent as BackButtonArrow } from "./BackButtonArrow.svg";
 import { StyledInvoicePage, GoBackButton } from "./styled";
+import ControlPanel from "./ControlPanel";
 import DetailsSection from "./DetailsSection";
 
 const InvoicePage = () => {
@@ -21,6 +22,7 @@ const InvoicePage = () => {
         <BackButtonArrow />
         <span>Go back</span>
       </GoBackButton>
+      <ControlPanel selectedInvoice={selectedInvoice}/>
       <DetailsSection selectedInvoice={selectedInvoice}/>
     </StyledInvoicePage>
   );

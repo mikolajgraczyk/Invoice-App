@@ -1,6 +1,5 @@
-import { ReactComponent as StatusCircle } from "./StatusCircle.svg";
-
-import {convertDateFormat} from "../../../convertDateFormat";
+import { convertDateFormat } from "../../../convertDateFormat";
+import PaymentStatus from "../../../../../common/PaymentStatus";
 import {
   StyledTileLink,
   LeftTileSection,
@@ -12,12 +11,10 @@ import {
   ClientName,
   RightTileSection,
   TotalPrice,
-  Status,
   StyledTileArrow,
 } from "./styled";
 
 const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
-
   const formattedDate = convertDateFormat(termDate);
 
   return (
@@ -35,10 +32,7 @@ const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
         </LeftTileSection>
         <RightTileSection>
           <TotalPrice>£ {totalPrice}</TotalPrice>
-          <Status status={paymentStatus}>
-            <StatusCircle />
-            <span>{paymentStatus}</span>
-          </Status>
+          <PaymentStatus status={paymentStatus} location={"homepageList"}/>
           <StyledTileArrow />
         </RightTileSection>
       </StyledTileLink>
