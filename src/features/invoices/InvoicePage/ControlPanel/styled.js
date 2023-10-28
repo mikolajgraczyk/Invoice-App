@@ -29,3 +29,9 @@ export const Wrapper = styled.div`
     width: 100%;
   }
 `;
+
+export const ButtonsDiv = styled.div`
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
+`;

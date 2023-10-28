@@ -1,4 +1,4 @@
-import { StyledControlPanel, Wrapper } from "./styled";
+import { StyledControlPanel, Wrapper, ButtonsDiv } from "./styled";
 import PaymentStatus from "../../../../common/PaymentStatus";
 import ControlButtons from "../../../../common/ControlButtons";
 
@@ -9,7 +9,9 @@ const ControlPanel = ({ selectedInvoice }) => {
         <span>Status</span>
         <PaymentStatus status={selectedInvoice.status} />
       </Wrapper>
-      <ControlButtons />
+      <ButtonsDiv>
+        <ControlButtons />
+      </ButtonsDiv>
     </StyledControlPanel>
   );
 };
