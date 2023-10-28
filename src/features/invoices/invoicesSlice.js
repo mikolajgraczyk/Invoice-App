@@ -29,6 +29,10 @@ const invoicesSlice = createSlice({
       const removeIndex = invoices.findIndex((invoice) => invoice.id === id);
       invoices.splice(removeIndex, 1);
     },
+    markInvoicePaid: ({ invoices }, { payload: id }) => {
+      const editIndex = invoices.findIndex((invoice) => invoice.id === id);
+      invoices[editIndex].status = "paid";
+    },
   },
 });
 
@@ -39,6 +43,7 @@ export const {
   hideFormPanel,
   addNewInvoice,
   deleteInvoice,
+  markInvoicePaid,
 } = invoicesSlice.actions;
 
 export const selectInvoicesState = (state) => state.invoices;

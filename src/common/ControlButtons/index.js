@@ -1,5 +1,8 @@
 import { useDispatch } from "react-redux";
-import { deleteInvoice } from "../../features/invoices/invoicesSlice";
+import {
+  deleteInvoice,
+  markInvoicePaid,
+} from "../../features/invoices/invoicesSlice";
 import { StyledControlButtons, ControlButton } from "./styled";
 import { useNavigate } from "react-router";
 
@@ -12,13 +15,19 @@ const ControlButtons = ({ id }) => {
     dispatch(deleteInvoice(id));
   };
 
+  const markPaidHandler = () => {
+    dispatch(markInvoicePaid(id));
+  };
+
   return (
     <StyledControlButtons>
       <ControlButton status="edit">Edit</ControlButton>
       <ControlButton status="delete" onClick={deleteHandler}>
         Delete
       </ControlButton>
-      <ControlButton status="markPaid">Mark as Paid</ControlButton>
+      <ControlButton status="markPaid" onClick={markPaidHandler}>
+        Mark as Paid
+      </ControlButton>
     </StyledControlButtons>
   );
 };
