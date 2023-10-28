@@ -28,9 +28,9 @@ const InvoicePage = () => {
       </GoBackButton>
       <ControlPanel selectedInvoice={selectedInvoice} />
       <DetailsSection selectedInvoice={selectedInvoice} />
-      {/* <MobileButtonsSection>
+      <MobileButtonsSection>
         <ControlButtons id={selectedInvoice.id} />
-      </MobileButtonsSection> */}
+      </MobileButtonsSection>
     </StyledInvoicePage>
   );
 };
