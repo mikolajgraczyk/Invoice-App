@@ -25,6 +25,10 @@ const invoicesSlice = createSlice({
     addNewInvoice: ({ invoices }, { payload: invoice }) => {
       invoices.push(invoice);
     },
+    deleteInvoice: ({ invoices }, { payload: id }) => {
+      const removeIndex = invoices.findIndex((invoice) => invoice.id === id);
+      invoices.splice(removeIndex, 1);
+    },
   },
 });
 
@@ -34,6 +38,7 @@ export const {
   triggerNewInvoice,
   hideFormPanel,
   addNewInvoice,
+  deleteInvoice,
 } = invoicesSlice.actions;
 
 export const selectInvoicesState = (state) => state.invoices;

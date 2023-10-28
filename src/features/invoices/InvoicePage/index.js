@@ -15,11 +15,10 @@ import ControlButtons from "../../../common/ControlButtons";
 
 const InvoicePage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const invoicesState = useSelector(selectInvoices);
   const selectedInvoice = invoicesState.find((invoice) => invoice.id === id);
-
-  const navigate = useNavigate();
 
   return (
     <StyledInvoicePage>
@@ -29,9 +28,9 @@ const InvoicePage = () => {
       </GoBackButton>
       <ControlPanel selectedInvoice={selectedInvoice} />
       <DetailsSection selectedInvoice={selectedInvoice} />
-      <MobileButtonsSection>
-        <ControlButtons />
-      </MobileButtonsSection>
+      {/* <MobileButtonsSection>
+        <ControlButtons id={selectedInvoice.id} />
+      </MobileButtonsSection> */}
     </StyledInvoicePage>
   );
 };
