@@ -7,17 +7,18 @@ import PersonalInfoFieldset from "./PersonalInfoFieldset";
 import DetailsFieldset from "./DetailsFieldset";
 import ItemList from "./ItemList";
 import BottomButtonsSection from "./BottomButtonsSection";
-import { initialFormState } from "./initialFormState";
+import { useInitializeForm } from "./useInitializeForm";
 
 export const formContext = createContext();
 
 const FormPanel = () => {
-  const [formData, setFormData] = useState(initialFormState);
+  const [formData, setFormData] = useState(useInitializeForm());
   const [isFormValid, setIsFormValid] = useState(true);
 
   const formPanelStatus = useSelector(selectFormPanelStatus);
 
-  const panelTitle = formPanelStatus === "create" ? "New Invoice" : "Edit";
+  const panelTitle =
+    formPanelStatus === `create` ? `New Invoice` : `Edit #${formPanelStatus}`;
 
   return (
     <>

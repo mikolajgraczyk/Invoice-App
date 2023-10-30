@@ -29,7 +29,7 @@ const InvoicePage = () => {
       <ControlPanel selectedInvoice={selectedInvoice} />
       <DetailsSection selectedInvoice={selectedInvoice} />
       <MobileButtonsSection>
-        <ControlButtons id={selectedInvoice.id} />
+        <ControlButtons selectedInvoice={selectedInvoice} />
       </MobileButtonsSection>
     </StyledInvoicePage>
   );

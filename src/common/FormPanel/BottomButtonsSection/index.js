@@ -1,65 +1,23 @@
 import { useContext } from "react";
-import { useDispatch } from "react-redux";
-
 import { formContext } from "..";
-import {
-  addNewInvoice,
-  hideFormPanel,
-} from "../../../features/invoices/invoicesSlice";
-import { formValidation } from "../formValidation";
-import {
-  StyledBottomButtonsSection,
-  DiscardButton,
-  DraftButton,
-  SaveButton,
-} from "./styled";
+import { StyledBottomButtonsSection } from "./styled";
+import ButtonsToCreate from "./ButtonsToCreate";
+import ButtonsToEdit from "./ButtonsToEdit";
 
 const BottomButtonsSection = () => {
-  const dispatch = useDispatch();
-  const { formData, setIsFormValid, formPanelStatus } = useContext(formContext);
+  const { formPanelStatus } = useContext(formContext);
 
-  const saveAsDraft = (event) => {
-    event.preventDefault();
-    dispatch(
-      addNewInvoice({
-        ...formData,
-        status: "draft",
-      })
+  if (formPanelStatus !== "create") {
+    return (
+      <StyledBottomButtonsSection>
+        <ButtonsToEdit />
+      </StyledBottomButtonsSection>
     );
-    dispatch(hideFormPanel());
-  };
-
-  const submit = (event) => {
-    event.preventDefault();
-    const isFormFilled = formValidation(formData);
-    if (!isFormFilled) {
-      setIsFormValid(false);
-      return;
-    }
-
-    dispatch(hideFormPanel());
-
-    if (formPanelStatus === "create") {
-      dispatch(addNewInvoice(formData));
-    } else {
-      console.log("edycja");
-    }
-
-    return;
-  };
-
-  const discard = (event) => {
-    event.preventDefault();
-    dispatch(hideFormPanel());
-  };
+  }
 
   return (
     <StyledBottomButtonsSection>
-      <DiscardButton onClick={(event) => discard(event)}>Discard</DiscardButton>
-      <DraftButton onClick={(event) => saveAsDraft(event)}>
-        Save as Draft
-      </DraftButton>
-      <SaveButton onClick={(event) => submit(event)}>Save & Send</SaveButton>
+      <ButtonsToCreate />
     </StyledBottomButtonsSection>
   );
 };

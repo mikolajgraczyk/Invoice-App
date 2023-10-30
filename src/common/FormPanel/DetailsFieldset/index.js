@@ -31,7 +31,14 @@ const DetailsFieldset = () => {
         },
       }));
     } else {
-      console.log("edycja");
+      setFormData((prevState) => ({
+        ...prevState,
+        to: {
+          ...prevState.to,
+          paymentTermsDate: calculateTermDate(formData.to),
+        },
+      }));
+      return;
     }
   }, [paymentTerm]);
 

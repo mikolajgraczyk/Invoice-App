@@ -19,11 +19,20 @@ const invoicesSlice = createSlice({
     triggerNewInvoice: (state) => {
       state.formPanelStatus = "create";
     },
+    triggerEditInvoice: (state, { payload: id }) => {
+      state.formPanelStatus = id;
+    },
     hideFormPanel: (state) => {
       state.formPanelStatus = null;
     },
     addNewInvoice: ({ invoices }, { payload: invoice }) => {
       invoices.push(invoice);
+    },
+    editInvoice: ({ invoices }, { payload: updatedState }) => {
+      const editIndex = invoices.findIndex(
+        (invoice) => invoice.id === updatedState.id
+      );
+      invoices[editIndex] = updatedState;
     },
     deleteInvoice: ({ invoices }, { payload: id }) => {
       const removeIndex = invoices.findIndex((invoice) => invoice.id === id);
@@ -40,8 +49,10 @@ export const {
   toggleTheme,
   setFilterStatus,
   triggerNewInvoice,
+  triggerEditInvoice,
   hideFormPanel,
   addNewInvoice,
+  editInvoice,
   deleteInvoice,
   markInvoicePaid,
 } = invoicesSlice.actions;
