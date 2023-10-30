@@ -5,7 +5,7 @@ const controlsSlice = createSlice({
   initialState: {
     isLightTheme: true,
     isStatusTabOpen: false,
-    isDeleteConfirmation: true,
+    isDeleteConfirmation: false,
     formPanelStatus: null,
   },
   reducers: {
