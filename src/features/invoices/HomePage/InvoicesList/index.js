@@ -6,9 +6,16 @@ import Tile from "./Tile";
 const InvoicesList = () => {
   const invoices = useSelector(selectInvoices);
 
+  const sortedInvoices = [...invoices].sort((a, b) => {
+    const dateA = new Date(a.to.paymentTermsDate);
+    const dateB = new Date(b.to.paymentTermsDate);
+
+    return dateA - dateB;
+  });
+
   return (
     <StyledInvoicesList>
-      {invoices.map((invoice) => (
+      {sortedInvoices.map((invoice) => (
         <Tile
           key={invoice.id}
           id={invoice.id}

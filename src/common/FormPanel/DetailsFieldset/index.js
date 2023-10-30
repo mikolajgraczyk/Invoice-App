@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect, useContext } from "react";
 import { formContext } from "..";
 import { StyledFieldset, Label, LongLabel, Input } from "../fieldsets/index";
@@ -14,6 +15,7 @@ const DetailsFieldset = () => {
   const { formData, setFormData, formPanelStatus, isFormValid } =
     useContext(formContext);
   const paymentTerm = formData.to.paymentTerms;
+  const invoiceDate = formData.to.date;
 
   const PaymentTermsButtonHandler = (event) => {
     event.preventDefault();
@@ -40,7 +42,7 @@ const DetailsFieldset = () => {
       }));
       return;
     }
-  }, [paymentTerm]);
+  }, [paymentTerm, invoiceDate]);
 
   const onInputChange = ({ target }) => {
     const { name, value } = target;
