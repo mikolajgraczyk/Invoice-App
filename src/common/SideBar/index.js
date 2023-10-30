@@ -1,7 +1,7 @@
 import {
-  selectIsLightTheme,
   toggleTheme,
-} from "../../features/invoices/invoicesSlice";
+  selectIsLightTheme,
+} from "../../features/invoices/controlsSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { ReactComponent as SwitchToLightIcon } from "./SwitchToLightIcon.svg";
 import { ReactComponent as SwitchToDarkIcon } from "./SwitchToDarkIcon.svg";

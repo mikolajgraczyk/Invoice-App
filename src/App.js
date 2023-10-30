@@ -10,10 +10,8 @@ import FormPanel from "./common/FormPanel";
 import SideBar from "./common/SideBar";
 import { Wrapper } from "./styled";
 import { lightTheme, darkTheme } from "./theme";
-import {
-  selectIsLightTheme,
-  selectFormPanelStatus,
-} from "./features/invoices/invoicesSlice";
+import { selectFormPanelStatus } from "./features/invoices/controlsSlice";
+import { selectIsLightTheme } from "./features/invoices/controlsSlice";
 
 function App() {
   const isLightTheme = useSelector(selectIsLightTheme);

@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { formContext } from "..";
 import { formValidation } from "../formValidation";
 import { useDispatch } from "react-redux";
+import { hideFormPanel } from "../../../features/invoices/controlsSlice";
 import {
   addNewInvoice,
   editInvoice,
-  hideFormPanel,
 } from "../../../features/invoices/invoicesSlice";
 
 export const useFormActions = () => {

@@ -1,8 +1,6 @@
 import { useSelector } from "react-redux";
-import {
-  selectInvoices,
-  selectFormPanelStatus,
-} from "../../features/invoices/invoicesSlice";
+import { selectInvoices } from "../../features/invoices/invoicesSlice";
+import { selectFormPanelStatus } from "../../features/invoices/controlsSlice";
 import { initialFormState } from "./initialFormState";
 
 export const useInitializeForm = () => {

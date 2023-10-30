@@ -6,7 +6,7 @@ export const StyledFilterStatusTab = styled.div`
   top: 37px;
   padding: 16px 0 16px;
   display: none;
-  box-shadow: ${({theme}) => theme.shadow};
+  box-shadow: ${({ theme }) => theme.shadow};
   border-radius: 8px;
   z-index: 1;
   font-size: 15px;
@@ -16,7 +16,7 @@ export const StyledFilterStatusTab = styled.div`
   transition: 0.4s;
 
   ${({ statusTab }) =>
-    statusTab &&
+    statusTab === "true" &&
     css`
       display: flex;
       flex-direction: column;
@@ -32,7 +32,6 @@ export const Label = styled.label`
   padding: 8px 88px 8px 24px;
   color: ${({ theme }) => theme.statusTab.text};
   transition: 0.4s;
-  
 
   input[type="checkbox"] {
     appearance: none;
@@ -50,7 +49,7 @@ export const Label = styled.label`
       border-color: ${({ theme }) => theme.statusTab.box};
     }
 
-    &:hover{
+    &:hover {
       cursor: pointer;
       transform: scale(1.1);
     }

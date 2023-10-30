@@ -1,40 +1,19 @@
-import { useDispatch } from "react-redux";
-import {
-  deleteInvoice,
-  markInvoicePaid,
-  triggerEditInvoice,
-} from "../../features/invoices/invoicesSlice";
 import { StyledControlButtons, ControlButton } from "./styled";
-import { useNavigate } from "react-router";
+import { useInvoiceActions } from "./useInvoiceActions";
 
-const ControlButtons = ({ selectedInvoice }) => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const id = selectedInvoice.id;
-
-  const deleteHandler = () => {
-    navigate("/home");
-    dispatch(deleteInvoice(id));
-  };
-
-  const markPaidHandler = () => {
-    dispatch(markInvoicePaid(id));
-  };
-
-  const editHandler = () => {
-    dispatch(triggerEditInvoice(id));
-  };
+const ControlButtons = ({ id }) => {
+  const { deleteButtonHandler, markPaidButtonHandler, editButtonHandler } =
+    useInvoiceActions(id);
 
   return (
     <StyledControlButtons>
-      <ControlButton status="edit" onClick={editHandler}>
+      <ControlButton status="edit" onClick={editButtonHandler}>
         Edit
       </ControlButton>
-      <ControlButton status="delete" onClick={deleteHandler}>
+      <ControlButton status="delete" onClick={deleteButtonHandler}>
         Delete
       </ControlButton>
-      <ControlButton status="markPaid" onClick={markPaidHandler}>
+      <ControlButton status="markPaid" onClick={markPaidButtonHandler}>
         Mark as Paid
       </ControlButton>
     </StyledControlButtons>

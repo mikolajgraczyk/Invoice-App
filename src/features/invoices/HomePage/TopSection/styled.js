@@ -1,5 +1,4 @@
-import styled, { css } from "styled-components";
-import { ReactComponent as FilterButtonArrow } from "./FilterButtonArrow.svg";
+import styled from "styled-components";
 
 export const StyledTopSection = styled.div`
   display: flex;
@@ -12,9 +11,9 @@ export const TitleSection = styled.div`
   flex-direction: column;
   gap: 6px;
 
-  @media(max-width: ${({theme}) => theme.breakpoint.tabletMax}px){
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     gap: 3px;
-  };
+  }
 `;
 
 export const Title = styled.h1`
@@ -68,48 +67,6 @@ export const ButtonsSection = styled.div`
   }
 `;
 
-export const FilterButton = styled.button`
-  background: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-  color: ${({ theme }) => theme.main.mainText};
-  font-size: 15px;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: -0.25px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  transition: 0.4s;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-export const ByStatus = styled.span`
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: none;
-  }
-`;
-
-export const StyledFilterButtonArrow = styled(FilterButtonArrow)`
-  ${({ statustab }) =>
-    statustab === "open" &&
-    css`
-      transform: rotate(-180deg);
-      transition: 0.4s;
-    `};
-
-  ${({ statustab }) =>
-    statustab === "closed" &&
-    css`
-      transform: rotate(0);
-      transition: 0.4s;
-    `};
-`;
-
 export const NewInvoiceButton = styled.button`
   background: ${({ theme }) => theme.newInvoiceButton.background};
   color: ${({ theme }) => theme.newInvoiceButton.text};
@@ -125,9 +82,9 @@ export const NewInvoiceButton = styled.button`
   line-height: 15px;
   letter-spacing: -0.25px;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
-    background: ${({theme}) => theme.newInvoiceButton.backgroundHover};
+    background: ${({ theme }) => theme.newInvoiceButton.backgroundHover};
   }
 `;
 

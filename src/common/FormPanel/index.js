@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import { useSelector } from "react-redux";
 import { StyledFormPanel, Wrapper, PanelTitle } from "./styled";
 import { Backdrop } from "../Backdrop";
-import { selectFormPanelStatus } from "../../features/invoices/invoicesSlice";
+import { selectFormPanelStatus } from "../../features/invoices/controlsSlice";
 import PersonalInfoFieldset from "./PersonalInfoFieldset";
 import DetailsFieldset from "./DetailsFieldset";
 import ItemList from "./ItemList";
@@ -44,7 +44,7 @@ const FormPanel = () => {
           <BottomButtonsSection />
         </formContext.Provider>
       </StyledFormPanel>
-      {formPanelStatus && <Backdrop />}
+      <Backdrop />
     </>
   );
 };

@@ -9,29 +9,36 @@ import {
   GoBackButton,
   MobileButtonsSection,
 } from "./styled";
+import { selectIsDeleteConfirmation } from "../controlsSlice";
 import ControlPanel from "./ControlPanel";
 import DetailsSection from "./DetailsSection";
 import ControlButtons from "../../../common/ControlButtons";
+import ConfirmDeletion from "./ConfirmDeletion";
 
 const InvoicePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const isDeleteConfirmation = useSelector(selectIsDeleteConfirmation);
   const invoicesState = useSelector(selectInvoices);
+
   const selectedInvoice = invoicesState.find((invoice) => invoice.id === id);
 
   return (
-    <StyledInvoicePage>
-      <GoBackButton onClick={() => navigate(-1)}>
-        <BackButtonArrow />
-        <span>Go back</span>
-      </GoBackButton>
-      <ControlPanel selectedInvoice={selectedInvoice} />
-      <DetailsSection selectedInvoice={selectedInvoice} />
-      <MobileButtonsSection>
-        <ControlButtons selectedInvoice={selectedInvoice} />
-      </MobileButtonsSection>
-    </StyledInvoicePage>
+    <>
+      <StyledInvoicePage>
+        <GoBackButton onClick={() => navigate(-1)}>
+          <BackButtonArrow />
+          <span>Go back</span>
+        </GoBackButton>
+        <ControlPanel selectedInvoice={selectedInvoice} />
+        <DetailsSection selectedInvoice={selectedInvoice} />
+        <MobileButtonsSection>
+          <ControlButtons id={selectedInvoice.id} />
+        </MobileButtonsSection>
+      </StyledInvoicePage>
+      {isDeleteConfirmation && <ConfirmDeletion id={selectedInvoice.id} />}
+    </>
   );
 };
 

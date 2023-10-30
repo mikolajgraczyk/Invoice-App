@@ -5,25 +5,11 @@ const invoicesSlice = createSlice({
   name: "invoices",
   initialState: {
     invoices: defaultInvoices,
-    isLightTheme: true,
     filterStatus: null,
-    formPanelStatus: null,
   },
   reducers: {
-    toggleTheme: (state) => {
-      state.isLightTheme = !state.isLightTheme;
-    },
     setFilterStatus: (state, { payload: status }) => {
       state.filterStatus = status;
-    },
-    triggerNewInvoice: (state) => {
-      state.formPanelStatus = "create";
-    },
-    triggerEditInvoice: (state, { payload: id }) => {
-      state.formPanelStatus = id;
-    },
-    hideFormPanel: (state) => {
-      state.formPanelStatus = null;
     },
     addNewInvoice: ({ invoices }, { payload: invoice }) => {
       invoices.push(invoice);
@@ -46,11 +32,7 @@ const invoicesSlice = createSlice({
 });
 
 export const {
-  toggleTheme,
   setFilterStatus,
-  triggerNewInvoice,
-  triggerEditInvoice,
-  hideFormPanel,
   addNewInvoice,
   editInvoice,
   deleteInvoice,
@@ -73,13 +55,7 @@ export const selectInvoices = (state) => {
   return invoicesState.filter((invoice) => invoice.status === filterStatus);
 };
 
-export const selectIsLightTheme = (state) =>
-  selectInvoicesState(state).isLightTheme;
-
 export const selectInvoicesTotalNumber = (state) =>
   selectInvoices(state).length;
-
-export const selectFormPanelStatus = (state) =>
-  selectInvoicesState(state).formPanelStatus;
 
 export default invoicesSlice.reducer;

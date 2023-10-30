@@ -1,11 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setFilterStatus,
-  selectfilterStatus,
-} from "../../../invoicesSlice";
+import { setFilterStatus, selectfilterStatus } from "../../../../invoicesSlice";
 import { StyledFilterStatusTab, Label } from "./styled";
 
-const FilterStatusTab = ({ isStatusTabOpen }) => {
+const Tab = ({ isStatusTabOpen }) => {
   const dispatch = useDispatch();
 
   const selectedfilterStatus = useSelector(selectfilterStatus);
@@ -20,7 +17,7 @@ const FilterStatusTab = ({ isStatusTabOpen }) => {
   };
 
   return (
-    <StyledFilterStatusTab statusTab={isStatusTabOpen}>
+    <StyledFilterStatusTab statusTab={isStatusTabOpen ? "true" : "false"}>
       <Label>
         <input
           type="checkbox"
@@ -49,4 +46,4 @@ const FilterStatusTab = ({ isStatusTabOpen }) => {
   );
 };
 
-export default FilterStatusTab;
+export default Tab;

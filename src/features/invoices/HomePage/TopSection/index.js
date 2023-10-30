@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   StyledTopSection,
   TitleSection,
@@ -6,32 +5,27 @@ import {
   FullSubtitle,
   MobileSubtitle,
   ButtonsSection,
-  FilterButton,
-  ByStatus,
-  StyledFilterButtonArrow,
   NewInvoiceButton,
   ButtonInvoiceWord,
 } from "./styled";
 import {
   selectInvoicesTotalNumber,
   selectfilterStatus,
-  triggerNewInvoice,
-} from "../../invoicesSlice"
-import StatusTab from "./FilterStatusTab";
+} from "../../invoicesSlice";
+import { triggerNewInvoice } from "../../controlsSlice";
+import FilterButton from "./FilterButton";
 import { useSelector, useDispatch } from "react-redux";
 import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
 
 const TopSection = () => {
-  const [isStatusTabOpen, setIsStatusTabOpen] = useState(false);
-
   const dispatch = useDispatch();
 
   const invoicesTotalNumber = useSelector(selectInvoicesTotalNumber);
   const filter = useSelector(selectfilterStatus);
 
   const newInvoiceButtonHandler = () => {
-    dispatch(triggerNewInvoice())
-    window.scrollTo({top: 0, behavior: "smooth"});
+    dispatch(triggerNewInvoice());
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -48,17 +42,7 @@ const TopSection = () => {
         <MobileSubtitle>{invoicesTotalNumber} invoices</MobileSubtitle>
       </TitleSection>
       <ButtonsSection>
-        <FilterButton
-          onClick={() => setIsStatusTabOpen((prevState) => !prevState)}
-        >
-          <span>
-            Filter <ByStatus>by status</ByStatus>
-          </span>
-          <StyledFilterButtonArrow
-            statustab={isStatusTabOpen ? "open" : "closed"}
-          />
-        </FilterButton>
-        <StatusTab isStatusTabOpen={isStatusTabOpen} />
+        <FilterButton />
         <NewInvoiceButton onClick={newInvoiceButtonHandler}>
           <NewInvoiceIcon />
           <span>

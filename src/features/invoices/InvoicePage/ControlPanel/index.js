@@ -10,7 +10,7 @@ const ControlPanel = ({ selectedInvoice }) => {
         <PaymentStatus status={selectedInvoice.status} />
       </Wrapper>
       <ButtonsDiv>
-        <ControlButtons selectedInvoice={selectedInvoice} />
+        <ControlButtons id={selectedInvoice.id} />
       </ButtonsDiv>
     </StyledControlPanel>
   );
