@@ -8,19 +8,15 @@ import {
   NewInvoiceButton,
   ButtonInvoiceWord,
 } from "./styled";
-import {
-  selectInvoicesTotalNumber,
-  selectfilterStatus,
-} from "../../invoicesSlice";
+import { selectfilterStatus } from "../../invoicesSlice";
 import { triggerNewInvoice } from "../../controlsSlice";
 import FilterButton from "./FilterButton";
 import { useSelector, useDispatch } from "react-redux";
 import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
 
-const TopSection = () => {
+const TopSection = ({ invoicesTotalNumber }) => {
   const dispatch = useDispatch();
 
-  const invoicesTotalNumber = useSelector(selectInvoicesTotalNumber);
   const filter = useSelector(selectfilterStatus);
 
   const newInvoiceButtonHandler = () => {
