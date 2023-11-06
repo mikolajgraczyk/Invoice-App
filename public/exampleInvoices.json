@@ -1,0 +1,240 @@
+[
+  {
+    "id": "RT3080",
+    "status": "paid",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Jensen Huang",
+      "clientEmail": "jensenhuang@mail.com",
+      "streetAdress": "123 Main Street",
+      "city": "Los Angeles",
+      "postalCode": "90001",
+      "country": "United States",
+      "date": "2021-08-10",
+      "paymentTerms": 7,
+      "paymentTermsDate": "2021-08-19",
+      "projectDescription": "Website Development"
+    },
+    "itemList": [
+      {
+        "itemId": "4zs8",
+        "itemName": "Web Development",
+        "quantity": 1,
+        "price": 1800.9,
+        "totalItemPrice": 1800.9
+      }
+    ],
+    "totalPrice": 1800.9
+  },
+  {
+    "id": "XM9141",
+    "status": "pending",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Alex Grim",
+      "clientEmail": "alexgrim@mail.com",
+      "streetAdress": "84 Church Way",
+      "city": "Bradford",
+      "postalCode": "BD1 9PB",
+      "country": "United Kingdom",
+      "date": "2021-08-21",
+      "paymentTerms": 14,
+      "paymentTermsDate": "2021-09-20",
+      "projectDescription": "Graphic Design"
+    },
+    "itemList": [
+      {
+        "itemId": "b8c8",
+        "itemName": "Banner Design",
+        "quantity": 1,
+        "price": 156,
+        "totalItemPrice": 156
+      },
+      {
+        "itemId": "b9c9",
+        "itemName": "Email Design",
+        "quantity": 2,
+        "price": 100,
+        "totalItemPrice": 200
+      }
+    ],
+    "totalPrice": 556
+  },
+  {
+    "id": "RG0314",
+    "status": "paid",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "John Morrison",
+      "clientEmail": "john@mail.com",
+      "streetAdress": "456 Elm Street",
+      "city": "New York",
+      "postalCode": "10001",
+      "country": "United States",
+      "date": "2021-09-30",
+      "paymentTerms": 1,
+      "paymentTermsDate": "2021-10-01",
+      "projectDescription": "App Development"
+    },
+    "itemList": [
+      {
+        "itemId": "b9c8",
+        "itemName": "Mobile App",
+        "quantity": 1,
+        "price": 14002.33,
+        "totalItemPrice": 14002.33
+      }
+    ],
+    "totalPrice": 14002.33
+  },
+  {
+    "id": "RT2080",
+    "status": "pending",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Alysa Werner",
+      "clientEmail": "alysa@mail.com",
+      "streetAdress": "789 Oak Avenue",
+      "city": "Chicago",
+      "postalCode": "60601",
+      "country": "United States",
+      "date": "2021-08-31",
+      "paymentTerms": 30,
+      "paymentTermsDate": "2021-10-12",
+      "projectDescription": "Logo Design"
+    },
+    "itemList": [
+      {
+        "itemId": "8b7az4gs6e",
+        "itemName": "Logo Design",
+        "quantity": 1,
+        "price": 102.04,
+        "totalItemPrice": 102.04
+      }
+    ],
+    "totalPrice": 102.04
+  },
+  {
+    "id": "AA1449",
+    "status": "pending",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Mellisa Clarke",
+      "clientEmail": "mellisa@mail.com",
+      "streetAdress": "567 Pine Street",
+      "city": "San Francisco",
+      "postalCode": "94101",
+      "country": "United States",
+      "date": "2021-10-05",
+      "paymentTerms": 7,
+      "paymentTermsDate": "2021-10-14",
+      "projectDescription": "Social Media Marketing"
+    },
+    "itemList": [
+      {
+        "itemId": "9bia234vd",
+        "itemName": "Social Media Campaign",
+        "quantity": 1,
+        "price": 4032.33,
+        "totalItemPrice": 4032.33
+      }
+    ],
+    "totalPrice": 4032.33
+  },
+  {
+    "id": "TY9141",
+    "status": "pending",
+    "from": {
+      "streetAdress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Thomas Wayne",
+      "clientEmail": "thomas@mail.com",
+      "streetAdress": "678 Maple Street",
+      "city": "Gotham City",
+      "postalCode": "12345",
+      "country": "United States",
+      "date": "2021-10-28",
+      "paymentTerms": 1,
+      "paymentTermsDate": "2021-10-29",
+      "projectDescription": "Consulting Services"
+    },
+    "itemList": [
+      {
+        "itemId": "24Svt56e",
+        "itemName": "Consulting",
+        "quantity": 1,
+        "price": 6155.91,
+        "totalItemPrice": 6155.91
+      }
+    ],
+    "totalPrice": 6155.91
+  },
+  {
+    "id": "FV2353",
+    "status": "draft",
+    "from": {
+      "streetAddress": "19 Union Terrace",
+      "city": "London",
+      "postalCode": "E1 3EZ",
+      "country": "United Kingdom"
+    },
+    "to": {
+      "clientName": "Anita Wainwright",
+      "clientEmail": "anita@mail.com",
+      "streetAddress": "789 Cedar Lane",
+      "city": "London",
+      "postalCode": "SW1A 1AA",
+      "country": "United Kingdom",
+      "date": "2021-11-03",
+      "paymentTerms": 7,
+      "paymentTermsDate": "2021-11-12",
+      "projectDescription": "Content Writing"
+    },
+    "itemList": [
+      {
+        "itemId": "9b7a5c3e",
+        "itemName": "Blog Articles",
+        "quantity": 3,
+        "price": 333.56,
+        "totalItemPrice": 1000.68
+      },
+      {
+        "itemId": "9b7a4A6e",
+        "itemName": "Website Copy",
+        "quantity": 1,
+        "price": 2101.36,
+        "totalItemPrice": 2101.36
+      }
+    ],
+    "totalPrice": 3102.04
+  }
+]

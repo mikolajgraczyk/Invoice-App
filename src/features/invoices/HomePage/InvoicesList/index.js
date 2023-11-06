@@ -1,10 +1,10 @@
-import { StyledInvoicesList } from "./styled";
+import { StyledList } from "../styledList";
 import { useSelector } from "react-redux";
-import { selectInvoices } from "../../invoicesSlice";
+import { selectFilteredInvoices } from "../../invoicesSlice";
 import Tile from "./Tile";
 
 const InvoicesList = () => {
-  const invoices = useSelector(selectInvoices);
+  const invoices = useSelector(selectFilteredInvoices);
 
   const sortedInvoices = [...invoices].sort((a, b) => {
     const dateA = new Date(a.to.paymentTermsDate);
@@ -14,7 +14,7 @@ const InvoicesList = () => {
   });
 
   return (
-    <StyledInvoicesList>
+    <StyledList>
       {sortedInvoices.map((invoice) => (
         <Tile
           key={invoice.id}
@@ -25,7 +25,7 @@ const InvoicesList = () => {
           paymentStatus={invoice.status}
         />
       ))}
-    </StyledInvoicesList>
+    </StyledList>
   );
 };
 

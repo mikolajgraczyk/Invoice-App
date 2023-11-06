@@ -52,3 +52,17 @@ export const NewInvoiceSpan = styled.span`
   font-weight: 700;
   white-space: nowrap;
 `;
+
+export const DownloadExample = styled.button`
+  padding: 0;
+  border: none;
+  background: none;
+  color: ${({ theme }) => theme.tile.text1};
+  font-weight: 700;
+  transition: 0.3s;
+  text-decoration: underline;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;

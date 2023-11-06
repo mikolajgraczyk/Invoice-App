@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { defaultInvoices } from "./defaultInvoices";
+import { getInvoicesFromLocalStorage } from "./invoicesLocalStorage";
 
 const invoicesSlice = createSlice({
   name: "invoices",
   initialState: {
-    invoices: defaultInvoices,
+    invoices: getInvoicesFromLocalStorage(),
     filterStatus: null,
+    isExampleLoading: false,
   },
   reducers: {
     setFilterStatus: (state, { payload: status }) => {
@@ -28,6 +29,13 @@ const invoicesSlice = createSlice({
       const editIndex = invoices.findIndex((invoice) => invoice.id === id);
       invoices[editIndex].status = "paid";
     },
+    fetchExampleInvoices: () => {},
+    setExampleInvoices: (state, { payload: invoices }) => {
+      state.invoices = invoices;
+    },
+    toggleExampleLoading: (state) => {
+      state.isExampleLoading = !state.isExampleLoading;
+    },
   },
 });
 
@@ -37,6 +45,9 @@ export const {
   editInvoice,
   deleteInvoice,
   markInvoicePaid,
+  fetchExampleInvoices,
+  setExampleInvoices,
+  toggleExampleLoading,
 } = invoicesSlice.actions;
 
 export const selectInvoicesState = (state) => state.invoices;
@@ -44,8 +55,10 @@ export const selectInvoicesState = (state) => state.invoices;
 export const selectfilterStatus = (state) =>
   selectInvoicesState(state).filterStatus;
 
-export const selectInvoices = (state) => {
-  const invoicesState = selectInvoicesState(state).invoices;
+export const selectInvoices = (state) => selectInvoicesState(state).invoices;
+
+export const selectFilteredInvoices = (state) => {
+  const invoicesState = selectInvoices(state);
   const filterStatus = selectfilterStatus(state);
 
   if (!filterStatus) {
@@ -57,5 +70,8 @@ export const selectInvoices = (state) => {
 
 export const selectInvoicesTotalNumber = (state) =>
   selectInvoices(state).length;
+
+export const selectIsExampleLoading = (state) =>
+  selectInvoicesState(state).isExampleLoading;
 
 export default invoicesSlice.reducer;
