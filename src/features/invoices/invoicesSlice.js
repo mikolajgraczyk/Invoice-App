@@ -71,8 +71,8 @@ export const selectFilteredInvoices = (state) => {
   return invoicesState.filter((invoice) => invoice.status === filterStatus);
 };
 
-// export const selectFilteredInvoicesNumber = (state) =>
-//   selectFilteredInvoices(state).length;
+export const selectFilteredInvoicesNumber = (state) =>
+  selectFilteredInvoices(state).length;
 
 export const selectIsExampleLoading = (state) =>
   selectInvoicesState(state).isExampleLoading;

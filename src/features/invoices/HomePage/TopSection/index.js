@@ -9,7 +9,7 @@ import {
   ButtonInvoiceWord,
 } from "./styled";
 import {
-  selectInvoicesTotalNumber,
+  selectFilteredInvoicesNumber,
   selectfilterStatus,
 } from "../../invoicesSlice";
 import { triggerNewInvoice } from "../../controlsSlice";
@@ -21,7 +21,7 @@ const TopSection = () => {
   const dispatch = useDispatch();
 
   const filter = useSelector(selectfilterStatus);
-  const invoicesTotalNumber = useSelector(selectInvoicesTotalNumber);
+  const filteredInvoicesNumber = useSelector(selectFilteredInvoicesNumber);
 
   const newInvoiceButtonHandler = () => {
     dispatch(triggerNewInvoice());
@@ -33,13 +33,13 @@ const TopSection = () => {
       <TitleSection>
         <Title>Invoices</Title>
         <FullSubtitle>
-          {invoicesTotalNumber
-            ? `There are ${invoicesTotalNumber} ${
+          {filteredInvoicesNumber
+            ? `There are ${filteredInvoicesNumber} ${
                 filter ? filter : "total"
               } invoices`
             : "No invoices"}
         </FullSubtitle>
-        <MobileSubtitle>{invoicesTotalNumber} invoices</MobileSubtitle>
+        <MobileSubtitle>{filteredInvoicesNumber} invoices</MobileSubtitle>
       </TitleSection>
       <ButtonsSection>
         <FilterButton />
