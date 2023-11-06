@@ -1,4 +1,3 @@
-import PaymentStatus from "../../../../../common/PaymentStatus";
 import {
   StyledDummyTile,
   LeftTileSection,

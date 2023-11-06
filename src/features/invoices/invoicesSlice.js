@@ -57,6 +57,11 @@ export const selectfilterStatus = (state) =>
 
 export const selectInvoices = (state) => selectInvoicesState(state).invoices;
 
+export const selectInvoicesTotalNumber = (state) => {
+  const invoices = selectInvoices(state);
+  return invoices ? invoices.length : 0;
+};
+
 export const selectFilteredInvoices = (state) => {
   const invoicesState = selectInvoices(state);
   const filterStatus = selectfilterStatus(state);
@@ -67,9 +72,6 @@ export const selectFilteredInvoices = (state) => {
 
   return invoicesState.filter((invoice) => invoice.status === filterStatus);
 };
-
-export const selectInvoicesTotalNumber = (state) =>
-  selectInvoices(state).length;
 
 export const selectFilteredInvoicesNumber = (state) =>
   selectFilteredInvoices(state).length;
