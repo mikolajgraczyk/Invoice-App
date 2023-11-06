@@ -8,16 +8,20 @@ import {
   NewInvoiceButton,
   ButtonInvoiceWord,
 } from "./styled";
-import { selectfilterStatus } from "../../invoicesSlice";
+import {
+  selectFilteredInvoicesNumber,
+  selectfilterStatus,
+} from "../../invoicesSlice";
 import { triggerNewInvoice } from "../../controlsSlice";
 import FilterButton from "./FilterButton";
 import { useSelector, useDispatch } from "react-redux";
 import { ReactComponent as NewInvoiceIcon } from "./NewInvoiceIcon.svg";
 
-const TopSection = ({ invoicesTotalNumber }) => {
+const TopSection = () => {
   const dispatch = useDispatch();
 
   const filter = useSelector(selectfilterStatus);
+  const filteredInvoicesNumber = useSelector(selectFilteredInvoicesNumber);
 
   const newInvoiceButtonHandler = () => {
     dispatch(triggerNewInvoice());
@@ -29,13 +33,13 @@ const TopSection = ({ invoicesTotalNumber }) => {
       <TitleSection>
         <Title>Invoices</Title>
         <FullSubtitle>
-          {invoicesTotalNumber
-            ? `There are ${invoicesTotalNumber} ${
+          {filteredInvoicesNumber
+            ? `There are ${filteredInvoicesNumber} ${
                 filter ? filter : "total"
               } invoices`
             : "No invoices"}
         </FullSubtitle>
-        <MobileSubtitle>{invoicesTotalNumber} invoices</MobileSubtitle>
+        <MobileSubtitle>{filteredInvoicesNumber} invoices</MobileSubtitle>
       </TitleSection>
       <ButtonsSection>
         <FilterButton />

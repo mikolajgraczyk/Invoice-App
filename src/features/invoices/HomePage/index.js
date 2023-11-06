@@ -28,7 +28,7 @@ const HomePage = () => {
 
   return (
     <StyledHomePage>
-      <TopSection invoicesTotalNumber={invoicesTotalNumber} />
+      <TopSection />
       {homePageContent}
     </StyledHomePage>
   );

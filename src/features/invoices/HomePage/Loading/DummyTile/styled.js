@@ -80,19 +80,29 @@ export const TotalPriceDummy = styled.div`
   background: ${({ theme }) => theme.tile.text3};
   width: 69px;
   height: 24px;
-  margin-right: 20px;
   border-radius: 6px;
 `;
 
 export const PaymentStatusDummy = styled.div`
   width: 104px;
   height: 40px;
+  margin-left: 20px;
   background: ${({ theme }) => theme.tile.text3};
   border-radius: 6px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    position: absolute;
+    right: 24px;
+    bottom: 28px;
+  }
 `;
 
 export const ArrowDummy = styled.div`
   width: 4px;
   height: 8px;
   background: ${({ theme }) => theme.tile.text3};
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: none;
+  }
 `;
