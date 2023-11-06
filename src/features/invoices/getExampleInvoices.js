@@ -3,7 +3,6 @@ export const getExampleInvoices = async () => {
 
   if (!response.ok) {
     new Error(response.statusText);
-    return;
   }
 
   return await response.json();
