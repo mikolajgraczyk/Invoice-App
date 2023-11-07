@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     :root {
-    --theme-background-primary: ${({ theme }) => theme.bar.background};;
-    --theme-primary: ${({ theme }) => theme.bar.background};;
+    --theme-background-primary: ${({ theme }) => theme.bar.background};
+    --theme-primary: ${({ theme }) => theme.bar.background};
   }
 
     body{
