@@ -21,6 +21,13 @@ function App() {
     document.body.style.overflow = formPanelStatus ? "hidden" : "auto";
   }, [formPanelStatus]);
 
+  useEffect(() => {
+    const browserTheme = isLightTheme ? "#373B53" : "#1E2139";
+
+    let themeColorMetaTag = document.querySelector('meta[name="theme-color"]');
+    themeColorMetaTag.setAttribute("content", browserTheme);
+  }, [isLightTheme]);
+
   return (
     <ThemeProvider theme={isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
