@@ -9,6 +9,11 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
     }
 
+    :root {
+    --theme-background-primary: ${({ theme }) => theme.bar.background};;
+    --theme-primary: ${({ theme }) => theme.bar.background};;
+  }
+
     body{
     font-family: 'League Spartan', sans-serif;
     background: ${({ theme }) => theme.main.background};
