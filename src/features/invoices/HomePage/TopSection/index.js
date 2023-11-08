@@ -12,6 +12,7 @@ import {
   selectFilteredInvoicesNumber,
   selectfilterStatus,
 } from "../../invoicesSlice";
+import { scrollToTop } from "../../scrollToTop";
 import { triggerNewInvoice } from "../../controlsSlice";
 import FilterButton from "./FilterButton";
 import { useSelector, useDispatch } from "react-redux";
@@ -25,7 +26,7 @@ const TopSection = () => {
 
   const newInvoiceButtonHandler = () => {
     dispatch(triggerNewInvoice());
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    scrollToTop();
   };
 
   return (
