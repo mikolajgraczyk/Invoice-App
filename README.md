@@ -19,6 +19,8 @@ https://mikolajgraczyk.github.io/Invoice-App/
 - fetch
 - styledComponents
 - date-fns
+- framer-motion
+- usehooks-ts
 - randomstring
 - Redux (toolkit)
 - Redux-saga
