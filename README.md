@@ -6,6 +6,8 @@ You can store and manage your invoices using intuitive and good looking minimali
 ## Demo
 https://mikolajgraczyk.github.io/Invoice-App/
 
+![example](https://github.com/mikolajgraczyk/Invoice-App/blob/main/public/Demo.gif?raw=true)
+
 ## Technologies used in project
 - html
 - css
