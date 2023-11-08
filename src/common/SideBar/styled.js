@@ -70,6 +70,8 @@ export const BottomBarSection = styled(motion.div)`
     flex-direction: row;
     gap: 32px;
     margin-top: 30px;
+    right: 0;
+    position: absolute;
   }
 `;
 
