@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setFilterStatus, selectfilterStatus } from "../../../../invoicesSlice";
 import { StyledFilterStatusTab, Label } from "./styled";
 
-const Tab = ({ isStatusTabOpen }) => {
+const Tab = () => {
   const dispatch = useDispatch();
 
   const selectedfilterStatus = useSelector(selectfilterStatus);
@@ -17,7 +17,11 @@ const Tab = ({ isStatusTabOpen }) => {
   };
 
   return (
-    <StyledFilterStatusTab statusTab={isStatusTabOpen ? "true" : "false"}>
+    <StyledFilterStatusTab
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ duration: 0.01 }}
+    >
       <Label>
         <input
           type="checkbox"

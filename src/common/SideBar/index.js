@@ -14,20 +14,43 @@ import {
   UserIconSection,
   StyledUserDefaultIcon,
 } from "./styled";
+import { useMediaQuery } from "usehooks-ts";
+import { breakpoint } from "../../theme";
+import { motion } from "framer-motion";
 
 const SideBar = ({ formPanelStatus }) => {
-  const isLightTheme = useSelector(selectIsLightTheme);
-
   const dispatch = useDispatch();
 
+  const isLightTheme = useSelector(selectIsLightTheme);
+
+  const isDesktop = useMediaQuery(`(min-width: ${breakpoint.tabletMax}px)`);
+
   return (
-    <StyledSideBar formPanelStatus={formPanelStatus}>
-      <div>
+    <StyledSideBar
+      formpanelstatus={formPanelStatus}
+      initial={isDesktop ? { x: -103 } : { y: -160 }}
+      animate={{ y: 0, x: 0 }}
+      transition={{ duration: 0.5, type: "spring", stiffness: 65 }}
+    >
+      <motion.div
+        initial={{ x: -113 }}
+        animate={{ x: 0 }}
+        transition={{ delay: 0.6, type: "tween" }}
+      >
         <StyledRectangle />
         <StyledShape />
-      </div>
-      <BottomBarSection>
-        <ThemeButton onClick={() => dispatch(toggleTheme())}>
+      </motion.div>
+      <BottomBarSection
+        initial={isDesktop ? { x: -113 } : { x: 160 }}
+        animate={{ x: 0 }}
+        transition={{ delay: 0.6, type: "tween" }}
+      >
+        <ThemeButton
+          onClick={() => dispatch(toggleTheme())}
+          initial={{ rotate: isLightTheme ? 720 : 0 }}
+          animate={{ rotate: isLightTheme ? 720 : 0 }}
+          transition={{ type: "tween" }}
+        >
           {isLightTheme ? <SwitchToDarkIcon /> : <SwitchToLightIcon />}
         </ThemeButton>
         <UserIconSection>

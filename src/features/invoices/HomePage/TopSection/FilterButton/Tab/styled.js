@@ -1,11 +1,15 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledFilterStatusTab = styled.div`
+export const StyledFilterStatusTab = styled(motion.div)`
   background: ${({ theme }) => theme.statusTab.background};
   position: absolute;
-  top: 37px;
+  top: 54px;
+  left: -37px;
   padding: 16px 0 16px;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   box-shadow: ${({ theme }) => theme.shadow};
   border-radius: 8px;
   z-index: 1;
@@ -14,14 +18,6 @@ export const StyledFilterStatusTab = styled.div`
   line-height: 15px;
   letter-spacing: -0.25px;
   transition: 0.4s;
-
-  ${({ statusTab }) =>
-    statusTab === "true" &&
-    css`
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    `}
 `;
 
 export const Label = styled.label`

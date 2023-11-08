@@ -32,7 +32,7 @@ const Tile = ({ id, termDate, clientName, totalPrice, paymentStatus }) => {
         </LeftTileSection>
         <RightTileSection>
           <TotalPrice>£ {totalPrice}</TotalPrice>
-          <PaymentStatus status={paymentStatus} location={"homepageList"}/>
+          <PaymentStatus status={paymentStatus} location={"homepageList"} />
           <StyledTileArrow />
         </RightTileSection>
       </StyledTileLink>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const StyledInvoicePage = styled.main`
   max-width: 730px;
@@ -20,7 +21,7 @@ export const StyledInvoicePage = styled.main`
   }
 `;
 
-export const GoBackButton = styled.button`
+export const GoBackButton = styled(motion.button)`
   display: flex;
   align-items: center;
   padding: 0;

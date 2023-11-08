@@ -43,7 +43,11 @@ const TopSection = () => {
       </TitleSection>
       <ButtonsSection>
         <FilterButton />
-        <NewInvoiceButton onClick={newInvoiceButtonHandler}>
+        <NewInvoiceButton
+          onClick={newInvoiceButtonHandler}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.1 }}
+        >
           <NewInvoiceIcon />
           <span>
             New <ButtonInvoiceWord>Invoice</ButtonInvoiceWord>

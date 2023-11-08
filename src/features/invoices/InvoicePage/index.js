@@ -27,7 +27,11 @@ const InvoicePage = () => {
   return (
     <>
       <StyledInvoicePage>
-        <GoBackButton onClick={() => navigate(-1)}>
+        <GoBackButton
+          onClick={() => navigate(-1)}
+          whileTap={{ scale: 0.9 }}
+          transition={{ duration: 0.01 }}
+        >
           <BackButtonArrow />
           <span>Go back</span>
         </GoBackButton>

@@ -12,7 +12,11 @@ import {
 
 const DummyTile = () => {
   return (
-    <StyledDummyTile>
+    <StyledDummyTile
+      initial={{ opacity: 0 }}
+      animate={{ opacity: [0.4, 0.6, 0.4] }}
+      transition={{ repeat: Infinity, duration: 0.8 }}
+    >
       <LeftTileSection>
         <IdDummy />
         <PaymentTermDummy />

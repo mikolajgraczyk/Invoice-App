@@ -19,7 +19,7 @@ const ConfirmDeletion = ({ id }) => {
 
   return (
     <>
-      <StyledConfirmDeletion>
+      <StyledConfirmDeletion initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
         <TextSection>
           <Title>Confirm Deletion</Title>
           <Description>
@@ -34,7 +34,11 @@ const ConfirmDeletion = ({ id }) => {
           <DeleteButton onClick={() => confirmDeletion()}>Delete</DeleteButton>
         </ButtonsSection>
       </StyledConfirmDeletion>
-      <Backdrop location="deletion" />
+      <Backdrop
+        location="deletion"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4984 }}
+      />
     </>
   );
 };

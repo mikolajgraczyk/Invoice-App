@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledDummyTile = styled.li`
+export const StyledDummyTile = styled(motion.li)`
   background: ${({ theme }) => theme.tile.background};
   padding: 16px 24px 16px 32px;
   box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
@@ -9,7 +10,6 @@ export const StyledDummyTile = styled.li`
   align-items: center;
   justify-content: space-between;
   text-decoration: none;
-  opacity: 0.3;
   transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {

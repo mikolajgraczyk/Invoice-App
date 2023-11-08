@@ -27,7 +27,11 @@ const HomePage = () => {
   const homePageContent = setHomePageContent();
 
   return (
-    <StyledHomePage>
+    <StyledHomePage
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+    >
       <TopSection />
       {homePageContent}
     </StyledHomePage>

@@ -1,7 +1,7 @@
-import styled, { css } from "styled-components";
-import { ReactComponent as FilterButtonArrow } from "./FilterButtonArrow.svg";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledFilterButton = styled.button`
+export const StyledFilterButton = styled(motion.button)`
   background: none;
   border: none;
   padding: 0;
@@ -25,20 +25,4 @@ export const ByStatus = styled.span`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
   }
-`;
-
-export const StyledFilterButtonArrow = styled(FilterButtonArrow)`
-  ${({ statustab }) =>
-    statustab === "true" &&
-    css`
-      transform: rotate(-180deg);
-      transition: 0.4s;
-    `};
-
-  ${({ statustab }) =>
-    statustab === "false" &&
-    css`
-      transform: rotate(0);
-      transition: 0.4s;
-    `};
 `;

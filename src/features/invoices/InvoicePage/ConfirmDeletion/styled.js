@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledConfirmDeletion = styled.div`
+export const StyledConfirmDeletion = styled(motion.div)`
   position: fixed;
   padding: 51px 48px 48px;
   max-width: 480px;

@@ -18,7 +18,7 @@ import { saveInvoicesInLocalStorage } from "./invoicesLocalStorage";
 function* fetchExampleInvoicesHandler() {
   try {
     yield put(toggleExampleLoading());
-    yield delay(1000);
+    yield delay(1100);
     const exampleInvoices = yield call(getExampleInvoices);
     yield put(setExampleInvoices(exampleInvoices));
     yield put(toggleExampleLoading());

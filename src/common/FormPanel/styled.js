@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-export const StyledFormPanel = styled.div`
+export const StyledFormPanel = styled(motion.div)`
   max-width: 719px;
   padding: 0 32px 119px 159px;
   background: ${({ theme }) => theme.formPanel.background};
@@ -56,7 +57,7 @@ export const Wrapper = styled.div`
 `;
 
 export const PanelTitle = styled.span`
-  color: ${({theme}) => theme.formPanel.mainText};
+  color: ${({ theme }) => theme.formPanel.mainText};
   font-size: 24px;
   font-weight: 700;
   line-height: 32px;

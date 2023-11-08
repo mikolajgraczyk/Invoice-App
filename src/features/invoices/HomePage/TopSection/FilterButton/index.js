@@ -1,10 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
+import { motion } from "framer-motion";
 import { toggleStatusTab, selectIsStatusTabOpen } from "../../../controlsSlice";
-import {
-  StyledFilterButton,
-  ByStatus,
-  StyledFilterButtonArrow,
-} from "./styled";
+import { StyledFilterButton, ByStatus } from "./styled";
+import { ReactComponent as FilterButtonArrow } from "./FilterButtonArrow.svg";
 import Tab from "./Tab";
 
 const FilterButton = () => {
@@ -14,15 +12,19 @@ const FilterButton = () => {
 
   return (
     <>
-      <StyledFilterButton onClick={() => dispatch(toggleStatusTab())}>
+      <StyledFilterButton
+        onClick={() => dispatch(toggleStatusTab())}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.01 }}
+      >
         <span>
           Filter <ByStatus>by status</ByStatus>
         </span>
-        <StyledFilterButtonArrow
-          statustab={isStatusTabOpen ? "true" : "false"}
-        />
+        <motion.div animate={{ rotate: isStatusTabOpen ? -180 : 0 }}>
+          <FilterButtonArrow />
+        </motion.div>
       </StyledFilterButton>
-      <Tab isStatusTabOpen={isStatusTabOpen} />
+      {isStatusTabOpen && <Tab />}
     </>
   );
 };

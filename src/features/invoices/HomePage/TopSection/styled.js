@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const StyledTopSection = styled.div`
   display: flex;
@@ -67,7 +68,7 @@ export const ButtonsSection = styled.div`
   }
 `;
 
-export const NewInvoiceButton = styled.button`
+export const NewInvoiceButton = styled(motion.button)`
   background: ${({ theme }) => theme.newInvoiceButton.background};
   color: ${({ theme }) => theme.newInvoiceButton.text};
   border: none;
