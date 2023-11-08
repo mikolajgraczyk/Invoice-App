@@ -13,7 +13,6 @@ export const StyledSideBar = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   z-index: 5;
-  transition: 0.4s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 100%;
