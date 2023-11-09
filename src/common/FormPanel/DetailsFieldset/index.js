@@ -6,8 +6,8 @@ import { Calendar, PaymentTermsButton, TermSelector } from "./styled";
 import Option from "./TermSelectorOption";
 import { calculateTermDate } from "./calculateTermDate";
 import { generateId } from "./generateId";
-import { ReactComponent as ArrowDown } from "./ArrowDown.svg";
-import { ReactComponent as ArrowUp } from "./ArrowUp.svg";
+import { ReactComponent as Arrow } from "./Arrow.svg";
+import { motion } from "framer-motion";
 
 const DetailsFieldset = () => {
   const [isPaymentTermVisible, setIsPaymentTermVisible] = useState(false);
@@ -71,30 +71,38 @@ const DetailsFieldset = () => {
         Payment Terms
         <PaymentTermsButton onClick={PaymentTermsButtonHandler}>
           {`Net ${paymentTerm} ${paymentTerm > 1 ? "Days" : "Day"}`}
-          {isPaymentTermVisible ? <ArrowUp /> : <ArrowDown />}
+          <motion.div animate={{ rotate: isPaymentTermVisible ? -180 : 0 }}>
+            <Arrow />
+          </motion.div>
         </PaymentTermsButton>
-        <TermSelector isPaymentTermVisible={isPaymentTermVisible}>
-          <Option
-            setFormData={setFormData}
-            setIsPaymentTermVisible={setIsPaymentTermVisible}
-            daysAmount={1}
-          />
-          <Option
-            setFormData={setFormData}
-            setIsPaymentTermVisible={setIsPaymentTermVisible}
-            daysAmount={7}
-          />
-          <Option
-            setFormData={setFormData}
-            setIsPaymentTermVisible={setIsPaymentTermVisible}
-            daysAmount={14}
-          />
-          <Option
-            setFormData={setFormData}
-            setIsPaymentTermVisible={setIsPaymentTermVisible}
-            daysAmount={30}
-          />
-        </TermSelector>
+        {isPaymentTermVisible && (
+          <TermSelector
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 100 }}
+          >
+            <Option
+              setFormData={setFormData}
+              setIsPaymentTermVisible={setIsPaymentTermVisible}
+              daysAmount={1}
+            />
+            <Option
+              setFormData={setFormData}
+              setIsPaymentTermVisible={setIsPaymentTermVisible}
+              daysAmount={7}
+            />
+            <Option
+              setFormData={setFormData}
+              setIsPaymentTermVisible={setIsPaymentTermVisible}
+              daysAmount={14}
+            />
+            <Option
+              setFormData={setFormData}
+              setIsPaymentTermVisible={setIsPaymentTermVisible}
+              daysAmount={30}
+            />
+          </TermSelector>
+        )}
       </Label>
       <LongLabel location="details">
         Project Description

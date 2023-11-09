@@ -1,4 +1,5 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const PaymentTermsButton = styled.button`
   border: 1px ${({ theme }) => theme.formPanel.inputBorder} solid;
@@ -62,15 +63,11 @@ export const Calendar = styled.input`
   }
 `;
 
-export const TermSelector = styled.div`
-  display: none;
-
-  ${({isPaymentTermVisible}) => isPaymentTermVisible && css`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 80px;
-    box-shadow: ${({theme}) => theme.shadow};
-  `}
+export const TermSelector = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: 80px;
+  box-shadow: ${({ theme }) => theme.shadow};
 `;
