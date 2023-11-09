@@ -9,6 +9,7 @@ export const StyledSideBar = styled(motion.aside)`
   border-radius: 0px 20px 20px 0px;
   width: 113px;
   margin-left: -10px;
+  overflow-x: hidden;
   height: 100%;
   display: flex;
   position: fixed;

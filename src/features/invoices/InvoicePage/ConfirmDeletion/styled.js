@@ -6,14 +6,13 @@ export const StyledConfirmDeletion = styled(motion.div)`
   padding: 51px 48px 48px;
   max-width: 480px;
   max-height: 249px;
+  transform: translate(-50%, -50%);
   top: 50%;
   left: calc(50% + 51px);
-  transform: translate(-50%, -50%);
   box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.1);
   border-radius: 8px;
   z-index: 7;
   background: ${({ theme }) => theme.deleteWindow.background};
-  transition: 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     width: 86%;

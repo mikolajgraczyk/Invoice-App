@@ -40,7 +40,11 @@ const SideBar = ({ formPanelStatus }) => {
         <StyledRectangle />
         <StyledShape />
       </motion.div>
-      <BottomBarSection>
+      <BottomBarSection
+        initial={isDesktop ? { x: -105 } : { x: 160 }}
+        animate={isDesktop ? { x: 0 } : { x: 0 }}
+        transition={{ delay: 0.6, type: "tween" }}
+      >
         <ThemeButton
           onClick={() => dispatch(toggleTheme())}
           initial={{ rotate: isLightTheme ? 720 : 0 }}
